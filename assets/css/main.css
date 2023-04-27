@@ -1776,3 +1776,12 @@ body.is-article-visible #footer {
 body.is-preload #footer {
 	opacity: 0;
 }
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:white;
+  height: 2px;
+}
