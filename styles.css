@@ -936,8 +936,17 @@ img {
 
     .about-card {
         width: 100%;
-        height: 320px;
+        height: auto;
         transform: none;
+    }
+
+    .about-card-img-wrap {
+        height: auto;
+    }
+
+    .about-card-img-wrap img {
+        object-fit: fill;
+        height: auto;
     }
 
     .expertise-section {
@@ -950,5 +959,24 @@ img {
 
     .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-links {
+        justify-content: center;
+    }
+
+    .footer-location {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .footer-location-text {
+        align-items: center;
+    }
+
+    .footer-location-meta {
+        align-items: center;
     }
 }
