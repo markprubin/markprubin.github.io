@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antarctic Icebergs | Mark Rubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="../index.html" class="nav-name">Mark Rubin</a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#portfolio">Work</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="mailto:mark.p.rubin@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#portfolio" class="back-link">&larr; Back to Work</a>
+
+        <span class="project-tag">Iceberg Tracking</span>
+        <h1>Antarctic Icebergs: Tracking Giants on the Move</h1>
+        <div class="project-header-row">
+            <p class="project-subtitle">Mapping the journeys of massive icebergs across the Southern Ocean</p>
+            <a href="https://public.tableau.com/app/profile/mark.rubin7829/viz/AntarcticaIcebergs/AntarcticaIcebergs" target="_blank" class="btn-dashboard">View Dashboard &rarr;</a>
+        </div>
+
+        <img src="../assets/project-4-dashboard.png" class="project-hero" alt="Antarctica Icebergs Dashboard">
+
+        <div class="project-content">
+
+            <div class="project-section">
+                <h2>The Challenge</h2>
+                <p>The US National Ice Center tracks enormous icebergs — some larger than cities — as they break off Antarctica and drift through the Southern Ocean. They've been recording data for years, but it's scattered across 547 individual files on their website.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>What I Built</h2>
+                <p>I created an automated system to gather, organize, and visualize every tracked iceberg's journey from 2014 to 2025. The result is an interactive map showing the paths of dozens of named icebergs as they drift, spin, break apart, and eventually melt away.</p>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1.25rem;">
+                    <div class="project-card">
+                        <strong>What It Shows</strong>
+                        <p>Each colored line traces a single iceberg's movement over time. You can see how some icebergs get caught in ocean currents and circle the continent for years, while others drift north and disappear. Some cluster together near the Antarctic Peninsula, while others venture far out into open waters. Click any iceberg name to highlight just its path.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Why It Matters</strong>
+                        <p>These icebergs aren't just scenic — they're massive floating hazards to shipping routes and scientific research vessels. They also tell us about ice shelf stability and ocean circulation patterns. By visualizing their movements, scientists, maritime operators, and researchers can better understand how these giants behave.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>The Technical Achievement</strong>
+                        <p>This project required building an entire data pipeline: automatically downloading 547 files from a government website, cleaning and standardizing inconsistent data formats, combining everything into one unified dataset, and creating geographic visualizations that make complex movement patterns instantly understandable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Objectives</h2>
+                <div class="project-grid" style="margin-bottom:1.25rem;">
+                    <div class="project-card">
+                        <strong>Goal</strong>
+                        <p>Automate the collection and standardization of Antarctic iceberg tracking data from the US Ice Center's online archive, preparing it for comprehensive geospatial visualization and analysis.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Scope</strong>
+                        <p>Scrape, download, validate, and consolidate 547 individual CSV files spanning multiple years of iceberg position and size data into a single, Tableau-ready dataset for interactive dashboard development.</p>
+                    </div>
+                </div>
+                <div class="project-card" style="margin-bottom:1.25rem;">
+                    <strong>Deliverable</strong>
+                    <p>A unified, clean dataset with standardized schema optimized for Tableau visualization, enabling comprehensive Antarctic iceberg movement tracking, size analysis, and geographic pattern discovery through interactive dashboards.</p>
+                </div>
+                <h3>Key Success Metrics</h3>
+                <ul>
+                    <li><strong>100%</strong> file download completion rate</li>
+                    <li><strong>Zero</strong> data loss during consolidation</li>
+                    <li>Standardized column structure across all historical data</li>
+                    <li>Automated validation and quality assurance pipeline</li>
+                    <li><strong>Tableau-optimized</strong> data structure with proper geographic coordinates and time series formatting</li>
+                </ul>
+                <div class="project-grid" style="margin-top:1.25rem;">
+                    <div class="project-card">
+                        <strong>Data Engineering</strong>
+                        <p>Web scraping and automation, data collection and consolidation, quality assurance and validation, file management</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Technical Competencies</strong>
+                        <p>Python automation with Selenium, web scraping with BeautifulSoup, Pandas data manipulation, error handling and logging</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Data Visualization</strong>
+                        <p>Interactive dashboard to isolate individual iceberg paths, color contrasting on a dark map for visual impact</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Business Value</strong>
+                        <p>Automated government data collection, standardized oceanographic datasets, quality-controlled pipeline, reproducible workflows</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <div class="project-card">
+                        <p class="challenge-title">Challenge 1: Large-Scale File Management (547 CSV Files)</p>
+                        <p>Managing and validating the download of 547 individual iceberg tracking CSV files from a government website, each containing different time periods and data structures.</p>
+                        <p><strong>Solution:</strong> Implemented automated validation system to cross-reference expected vs. actual downloads. Created file tracking with source lineage, built error handling for failed downloads, and developed systematic naming conventions.</p>
+                        <pre><code>missing = df_expected[~df_expected["filename"].isin(downloaded_files)]
+if not missing.empty:
+    with open(output_txt, "w") as f:
+        for name in missing["filename"]:
+            f.write(name + "\n")</code></pre>
+                        <p style="margin-top:0.75rem;"><strong>Outcome:</strong> Successfully validated 100% file completion rate with automated reporting.</p>
+                    </div>
+                    <div class="project-card">
+                        <p class="challenge-title">Challenge 2: Dynamic Web Scraping & Data Extraction</p>
+                        <p>The US Ice Center website required form interactions and dynamic content loading, making simple HTTP requests insufficient.</p>
+                        <p><strong>Solution:</strong> Utilized Selenium WebDriver for browser automation, implemented wait conditions for dynamic content, built robust error handling for network timeouts, and created regex pattern matching for product IDs.</p>
+                        <pre><code>WebDriverWait(driver, 15).until(
+    EC.presence_of_element_located((By.ID, "tbl-berg"))
+)
+match = re.search(r"prd=(\d+)", href)</code></pre>
+                        <p style="margin-top:0.75rem;"><strong>Outcome:</strong> Achieved reliable extraction of 547 unique product IDs with 99%+ success rate.</p>
+                    </div>
+                    <div class="project-card">
+                        <p class="challenge-title">Challenge 3: Data Standardization Across Inconsistent Schemas</p>
+                        <p>547 CSV files from different time periods had varying column structures, naming conventions, and data formats.</p>
+                        <p><strong>Solution:</strong> Developed flexible concatenation with pandas, created standardized column ordering, implemented missing column detection and null value handling, and built quality validation checks.</p>
+                        <pre><code>df_combined = pd.concat(dataframes, axis=0, ignore_index=True, sort=True)
+for col in desired_order:
+    if col not in df.columns:
+        df[col] = None</code></pre>
+                        <p style="margin-top:0.75rem;"><strong>Outcome:</strong> Successfully unified 547 disparate CSV files into a single, clean dataset.</p>
+                    </div>
+                    <div class="project-card">
+                        <p class="challenge-title">Challenge 4: Data Quality Assurance & Completeness Verification</p>
+                        <p>Ensuring data integrity across the entire pipeline — from web scraping to final consolidated dataset — with no silent failures or data loss.</p>
+                        <p><strong>Solution:</strong> Implemented multi-stage validation checks at each pipeline step, created comprehensive logging, built data lineage tracking with source file identification, and developed automated quality metrics.</p>
+                        <p><strong>Outcome:</strong> Achieved complete data accountability with zero data loss and full audit trail.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>The Pipeline: 5 Project Files</h2>
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+
+                    <details>
+                        <summary>1. Main Iceberg Data Scraper · <code>script.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                        <div>
+                            <p>Comprehensive web scraping and data collection pipeline. Loads iceberg file references, uses Selenium WebDriver to automate browser interactions, scrapes the US Ice Center website, extracts product IDs from download URLs, and automatically downloads all 547 CSV files.</p>
+                            <pre><code>import os, re, time, pandas as pd, requests
+from bs4 import BeautifulSoup
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+df_input = pd.read_csv("iceberg_files.csv")
+df_input.columns = df_input.columns.str.strip().str.lower()
+df_input["filename"] = df_input["filename"].str.strip().str.lower()
+
+options = Options()
+options.add_argument("--headless")
+driver = webdriver.Chrome(options=options)
+driver.get("https://usicecenter.gov/Products/ArchiveSearchMulti?...")
+
+WebDriverWait(driver, 15).until(
+    EC.presence_of_element_located((By.ID, "startdate-pick"))
+)
+start_date_input = driver.find_element(By.ID, "startdate-pick")
+start_date_input.clear()
+start_date_input.send_keys("11/07/2014")
+driver.find_element(By.ID, "search").click()
+WebDriverWait(driver, 15).until(
+    EC.presence_of_element_located((By.ID, "tbl-berg"))
+)
+
+soup = BeautifulSoup(driver.page_source, "html.parser")
+driver.quit()
+
+records = []
+for a in soup.find_all("a", href=True):
+    text = a.get_text(strip=True)
+    href = a["href"]
+    if text.endswith(".csv") and "DownloadArchive?prd=" in href:
+        match = re.search(r"prd=(\d+)", href)
+        if match:
+            records.append({"filename": text.strip().lower(), "prd": match.group(1)})
+
+df_final = pd.merge(df_input, pd.DataFrame(records), on="filename", how="left")
+df_final.to_csv("iceberg_files_with_prd.csv", index=False)
+
+output_folder = "iceberg_csvs"
+os.makedirs(output_folder, exist_ok=True)
+for i, row in df_final.iterrows():
+    if pd.notnull(row["prd"]):
+        response = requests.get(f"https://usicecenter.gov/File/DownloadArchive?prd={row['prd']}")
+        if response.status_code == 200:
+            with open(os.path.join(output_folder, row["filename"]), "wb") as f:
+                f.write(response.content)</code></pre>
+                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                <span class="tag-pill">Web Scraping</span>
+                                <span class="tag-pill">Selenium</span>
+                                <span class="tag-pill">BeautifulSoup</span>
+                                <span class="tag-pill">Regex</span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. Data Consolidation · <code>merge_iceberg_csvs.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                        <div>
+                            <p>Combines 547 individual CSV files into a single unified dataset. Scans directory for all CSVs, concatenates DataFrames with column alignment, handles missing data, and adds source file tracking for data lineage.</p>
+                            <pre><code>import pandas as pd
+import os
+from glob import glob
+
+folder_path = "iceberg_csvs"
+output_file = "antarctic_icebergs_combined.csv"
+
+csv_files = glob(os.path.join(folder_path, "*.csv"))
+print(f"Found {len(csv_files)} CSV files.")
+
+dataframes = []
+for file in csv_files:
+    try:
+        df = pd.read_csv(file)
+        df["source_file"] = os.path.basename(file)
+        dataframes.append(df)
+    except Exception as e:
+        print(f"Failed to read {file}: {e}")
+
+df_combined = pd.concat(dataframes, axis=0, ignore_index=True, sort=True)
+df_combined.to_csv(output_file, index=False)
+print(f"Saved '{output_file}' with shape {df_combined.shape}")</code></pre>
+                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                <span class="tag-pill">Pandas</span>
+                                <span class="tag-pill">Data Merging</span>
+                                <span class="tag-pill">Error Handling</span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. Data Standardization · <code>fix_csv.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                        <div>
+                            <p>Reorders and standardizes column structure: Iceberg, Last Update, Latitude, Longitude, Length/Width, Area metrics, Remarks. Adds missing columns with null values and enforces consistent schema.</p>
+                            <pre><code>import pandas as pd
+
+input_file = "antarctic_icebergs_combined.csv"
+output_file = "antarctic_icebergs_combined_reordered.csv"
+
+desired_order = [
+    "Iceberg", "Last Update", "Latitude", "Longitude",
+    "Length (NM)", "Width (NM)",
+    "Area (sqKM)", "Area (sqMI)", "Area (sqNM)",
+    "Remarks", "source_file"
+]
+
+df = pd.read_csv(input_file)
+for col in desired_order:
+    if col not in df.columns:
+        df[col] = None
+
+df = df[desired_order]
+df.to_csv(output_file, index=False)
+print(f"Reordered CSV saved to: {output_file}")</code></pre>
+                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                <span class="tag-pill">Schema Design</span>
+                                <span class="tag-pill">Data Quality</span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. File Validation · <code>search.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                        <div>
+                            <p>Validates downloaded files against expected list. Compares expected vs. actual downloads, identifies missing files, generates completion reports, and ensures data pipeline integrity.</p>
+                            <pre><code>import os
+import pandas as pd
+
+download_folder = "iceberg_csvs"
+expected_csv = "iceberg_files_with_prd.csv"
+output_txt = "missing_files.txt"
+
+df_expected = pd.read_csv(expected_csv)
+df_expected["filename"] = df_expected["filename"].str.strip().str.lower()
+
+downloaded_files = [
+    f.lower() for f in os.listdir(download_folder)
+    if f.endswith(".csv")
+]
+
+missing = df_expected[~df_expected["filename"].isin(downloaded_files)]
+
+if not missing.empty:
+    with open(output_txt, "w") as f:
+        for name in missing["filename"]:
+            f.write(name + "\n")
+    print(f"Missing {len(missing)} file(s). See {output_txt}.")
+else:
+    print("All expected files are present.")</code></pre>
+                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                <span class="tag-pill">Validation</span>
+                                <span class="tag-pill">Auditing</span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. Data Exploration · <code>test.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                        <div>
+                            <p>Quick data inspection and debugging tool. Loads and displays sample data, shows DataFrame structure and column names, and provides data preview for troubleshooting.</p>
+                            <pre><code>import pandas as pd
+
+df_input = pd.read_csv("iceberg_files.csv")
+print("\nFirst 5 rows:")
+print(df_input.head())
+
+print("\nColumn names:")
+print(df_input.columns.tolist())</code></pre>
+                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                <span class="tag-pill">Debugging</span>
+                                <span class="tag-pill">Exploration</span>
+                            </div>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+
+            <p class="final-statement">This project demonstrates end-to-end data engineering capabilities — from web automation to large-scale data processing, quality control, and business intelligence preparation for geospatial analytics.</p>
+
+            <div class="project-section">
+                <h2>Data Sources</h2>
+                <p><strong>US National Ice Center</strong></p>
+                <p><strong>Source:</strong> <a href="https://usicecenter.gov/Products/AntarcIcebergs" target="_blank" class="about-link">USNIC Antarctic Icebergs</a></p>
+                <p><strong>Dataset:</strong> Antarctic Iceberg Tracking Archive</p>
+                <p><strong>Coverage:</strong> 547 individual CSV files spanning 2014–2025</p>
+                <p><strong>Data Points:</strong> Position (lat/long), size (length, width, area), update timestamps, and remarks</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mark Rubin</p>
+    </footer>
+
+</body>
+</html>

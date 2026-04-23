@@ -7,7 +7,7 @@
     <title>Mark Rubin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -15,11 +15,11 @@
 
     <!-- Nav -->
     <nav class="nav">
-        <span class="nav-name">Mark Rubin</span>
+        <a href="#" class="nav-name">Mark Rubin</a>
         <div class="nav-links">
             <a href="#about">About</a>
-            <a href="#expertise">Expertise</a>
             <a href="#portfolio">Work</a>
+            <a href="#expertise">Expertise</a>
             <a href="mailto:mark.p.rubin@gmail.com">Contact</a>
         </div>
     </nav>
@@ -27,17 +27,34 @@
     <!-- About -->
     <section id="about" class="about-section">
         <div class="about-inner">
+            <div class="about-card">
+                <div class="about-card-img-wrap">
+                    <img src="assets/Headshot.png" alt="Mark Rubin">
+                </div>
+                <div class="about-card-overlay">
+                    <h3>Mark Rubin</h3>
+                </div>
+            </div>
             <div class="about-text">
                 <h1>Hi, I'm Mark.</h1>
-                <p class="about-lead">Climate data analyst and visualization designer based in [City].</p>
-                <p>I turn complex environmental data into clear, compelling stories. My work sits at the intersection of data science, design, and climate communication — helping people understand what the numbers actually mean.</p>
+                <p class="about-lead">Data storyteller. Community connector. <span class="about-highlight">Climate advocate.</span></p>
+                <p>I believe data has the power to drive meaningful change — and I've spent 5+ years proving it. From visualizing drought patterns in Washington's Yakima Basin to tracking scorching temperature anomalies in Arizona, I transform complex datasets into stories that spark action and inform decisions.</p>
+                <p>My work lives at the intersection of technical precision and human impact. I've built dashboards that help water managers understand century-long climate trends, mapped crime patterns to inform safer communities, and analyzed Formula 1 performance data to settle the GOAT debate. Whether it's Tableau, Python, or QGIS, the tools are just the beginning — the real work is making the invisible visible.</p>
+                <p>I've completed climate fellowships with <a href="http://terra.do/" target="_blank" class="about-link">Terra.do</a> and <a href="https://www.climatebase.org/" target="_blank" class="about-link">Climatebase</a>, and I'm pursuing graduate education in ocean conservation because I believe data professionals belong in the community, not just behind the screen.</p>
                 <div class="about-links">
                     <a href="#portfolio" class="btn-primary">See My Work</a>
                     <a href="mailto:mark.p.rubin@gmail.com" class="btn-ghost">Get in Touch</a>
                 </div>
             </div>
-            <div class="about-photo">
-                <img src="assets/headshot.jpg" alt="Mark Rubin">
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="portfolio-inner">
+            <h2>Selected Work</h2>
+            <div class="portfolio-grid" id="portfolio-grid">
+                <!-- Populated by script.js -->
             </div>
         </div>
     </section>
@@ -84,16 +101,6 @@
                     <div class="language-item"><img src="https://flagcdn.com/w40/us.png" alt="English"><span>English</span></div>
                     <div class="language-item"><img src="https://flagcdn.com/w40/de.png" alt="German"><span>German</span></div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="portfolio-inner">
-            <h2>Selected Work</h2>
-            <div class="portfolio-grid" id="portfolio-grid">
-                <!-- Populated by script.js -->
             </div>
         </div>
     </section>

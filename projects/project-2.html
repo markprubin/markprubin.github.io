@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valley of the Heat | Mark Rubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="../index.html" class="nav-name">Mark Rubin</a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#portfolio">Work</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="mailto:mark.p.rubin@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#portfolio" class="back-link">&larr; Back to Work</a>
+
+        <span class="project-tag">Urban Climate</span>
+        <h1>Valley of the Heat</h1>
+        <div class="project-header-row">
+            <p class="project-subtitle">Making 75 years of Phoenix temperature data instantly understandable</p>
+            <a href="https://public.tableau.com/app/profile/mark.rubin7829/viz/ValleyoftheHeat/ValleyoftheHeat" target="_blank" class="btn-dashboard">View Dashboard &rarr;</a>
+        </div>
+
+        <img src="../assets/project-2-dashboard.png" class="project-hero" alt="Valley of the Heat Radial Dashboard">
+
+        <div class="project-content">
+
+            <div class="project-section">
+                <h2>The Problem</h2>
+                <p>Most people glaze over when they see traditional line graphs and bar charts about climate change. The data is there, but it doesn't connect emotionally or make the story clear.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>What I Created</h2>
+                <p>A striking circular visualization that tells Phoenix's warming story at a glance. Each "ray" radiating from the center represents one year from 1950 to 2025. Blue rays show years that were cooler than normal, red rays show hotter years. The pattern is unmistakable — Phoenix has shifted from predominantly cool blues in the 1950s–1980s to nearly all reds from the 1990s onward.</p>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1.25rem;">
+                    <div class="project-card">
+                        <strong>Why It Matters</strong>
+                        <p>Phoenix isn't just experiencing normal weather fluctuations. The visualization reveals a clear acceleration: the city has warmed dramatically, especially in recent decades. This affects everything from energy costs and public health to urban planning decisions.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>The Impact</strong>
+                        <p>By turning 75 years of monthly temperature data into an intuitive visual story, this project makes climate change real and local. It's designed for city officials, journalists, educators, and concerned residents — anyone who needs to understand the trend without wading through spreadsheets.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>What Makes It Unique</strong>
+                        <p>Instead of intimidating charts, the circular design resembles the sun itself — a visual metaphor that reinforces the message while remaining analytically precise. It proves that data visualization can be both beautiful and scientifically rigorous.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Detailed Project Overview</h2>
+                <div class="project-grid" style="margin-bottom:1.5rem;">
+                    <div class="project-card">
+                        <strong>Goal</strong>
+                        <p>Create an innovative circular time series visualization to illustrate Phoenix, Arizona's dramatic temperature increase over 70+ years, demonstrating the urban heat island effect and climate change impact.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Scope</strong>
+                        <p>Analyze NOAA climate data from 1950–2025 to visualize Phoenix's temperature deviation from historical baselines using a unique radial chart design that emphasizes the acceleration of warming trends over time.</p>
+                    </div>
+                </div>
+                <h3>Key Visualization Aspects</h3>
+                <ul>
+                    <li><strong>Circular Time Series Design:</strong> Distinctive radial visualization where each "spoke" represents a year, with length and color indicating temperature deviation from baseline</li>
+                    <li><strong>Climate Storytelling:</strong> Visual metaphors (sun-like design) reinforce the heat theme while maintaining analytical precision</li>
+                    <li><strong>Temporal Pattern Analysis:</strong> Clearly shows the transition from cooler-than-baseline temperatures (1950s–1980s) to consistently hotter conditions (1990s–present)</li>
+                </ul>
+                <div class="project-grid-3" style="margin-top:1.5rem;">
+                    <div class="project-card">
+                        <strong>Climate Communication</strong>
+                        <p>Makes complex climate data accessible through intuitive visual design</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Urban Planning</strong>
+                        <p>Evidence for policy decisions regarding development and heat mitigation</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Environmental Awareness</strong>
+                        <p>Demonstrates real-world climate change impacts at the local level</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <div class="project-card">
+                    <p class="challenge-title">Missing Monthly Data Prior to 1949</p>
+                    <p>There were multiple months where data was missing for about half the year prior to 1949. Creating a 12-month rolling average to the present day would create issues, so the decision was made to use the first year of a complete 12-month record.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>The Approach & Process</h2>
+                <h3>Temperature Anomaly Analysis Script</h3>
+                <p>Purpose: Processes monthly temperature data to calculate climate anomalies for Phoenix, Arizona using a 1951–1980 baseline period.</p>
+                <details>
+                    <summary>View Python Script <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                    <div>
+                        <pre><code>import pandas as pd
+import numpy as np
+
+def process_monthly_temperature_data():
+    monthly_dataframes = []
+    months = ['01','02','03','04','05','06','07','08','09','10','11','12']
+
+    for i, month in enumerate(months):
+        try:
+            filename = f"data_{month}.csv"
+            df_month = pd.read_csv(filename)
+            df_month['Date'] = pd.to_datetime(
+                df_month['Date'].astype(str), format='%Y%m'
+            )
+            df_month['Month'] = int(month)
+            df_month['Year'] = df_month['Date'].dt.year
+            df_month = df_month.rename(columns={'Value': 'Temperature_F'})
+            monthly_dataframes.append(df_month)
+        except FileNotFoundError:
+            print(f"Warning: Could not find file for month {month}")
+            continue
+
+    df_combined = pd.concat(monthly_dataframes, ignore_index=True)
+    df_combined = df_combined.sort_values('Date').reset_index(drop=True)
+    df_combined['Temperature_F'] = pd.to_numeric(
+        df_combined['Temperature_F'], errors='coerce'
+    )
+    df_combined['Temperature_C'] = (df_combined['Temperature_F'] - 32) * 5/9
+
+    baseline_mask = (
+        (df_combined['Year'] >= 1951) & (df_combined['Year'] <= 1980)
+    )
+    baseline_avg_c = df_combined.loc[baseline_mask, 'Temperature_C'].mean()
+
+    df_combined = df_combined.sort_values('Date')
+    df_combined['Rolling_12mo_Avg_C'] = df_combined[
+        'Temperature_C'
+    ].rolling(window=12, min_periods=1).mean()
+    df_combined['Temp_Anomaly_C'] = (
+        df_combined['Rolling_12mo_Avg_C'] - baseline_avg_c
+    )
+
+    df_combined['Date'] = df_combined['Date'].dt.strftime('%m/%d/%Y')
+    final_columns = [
+        'Date', 'Year', 'Month', 'Temperature_F',
+        'Temperature_C', 'Rolling_12mo_Avg_C', 'Temp_Anomaly_C'
+    ]
+    df_final = df_combined[final_columns].copy()
+    df_final.to_csv('Phoenix_Monthly_Temps_With_Anomalies.csv', index=False)
+    return df_final</code></pre>
+                    </div>
+                </details>
+                <div class="project-grid" style="margin-top:1.25rem;">
+                    <div class="project-card">
+                        <strong>Data Integration</strong>
+                        <p>Loads and combines 12 separate monthly CSV files, handles YYYYMM date format, consolidates decades of records</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Temperature Processing</strong>
+                        <p>F→C conversion, 12-month rolling averages to smooth seasonal variations in Phoenix</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Anomaly Calculation</strong>
+                        <p>1951–1980 baseline from individual readings, standardized deviation measure over time</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Data Export</strong>
+                        <p>Formats dates for viz compatibility, creates analysis-ready CSV for Tableau</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section-highlight">
+                <h3 style="color:var(--text);font-size:1.1rem;margin-bottom:1rem;">Technical Skills Demonstrated</h3>
+                <ul>
+                    <li><strong>Multi-file data integration</strong> with Pandas</li>
+                    <li><strong>Time series processing</strong> and rolling calculations</li>
+                    <li><strong>Climate data standardization</strong> using statistical baselines</li>
+                    <li><strong>Advanced Tableau design</strong> — complex calculated fields and custom non-standard chart types</li>
+                    <li><strong>Color theory & psychology</strong> — intuitive cool-to-hot encoding reinforcing data meaning</li>
+                </ul>
+            </div>
+
+            <p class="final-statement">This project showcases advanced Tableau visualization skills, climate data analysis expertise, and the ability to transform complex environmental data into compelling, actionable insights for both technical and general audiences.</p>
+
+            <div class="project-section">
+                <h2>Data Sources</h2>
+                <p><strong>NOAA Climate at a Glance</strong></p>
+                <p><strong>Source:</strong> <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/city/time-series" target="_blank" class="about-link">NOAA City Time Series</a></p>
+                <p><strong>Coverage:</strong> Phoenix, Arizona — monthly temperature records, 1950–2025</p>
+                <p><strong>Baseline Period:</strong> 1951–1980 (30-year climatological reference)</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mark Rubin</p>
+    </footer>
+
+</body>
+</html>

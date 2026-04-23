@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arizona County Temperature Anomalies | Mark Rubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="../index.html" class="nav-name">Mark Rubin</a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#portfolio">Work</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="mailto:mark.p.rubin@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#portfolio" class="back-link">&larr; Back to Work</a>
+
+        <span class="project-tag">Statewide Climate</span>
+        <h1>Arizona County Temperature Anomalies</h1>
+        <div class="project-header-row">
+            <p class="project-subtitle">Arizona's Climate Story: Beyond Phoenix — addressing the "it's just urban sprawl" misconception</p>
+            <a href="https://public.tableau.com/app/profile/mark.rubin7829/viz/ArizonaCountyTemperatureAnomalies/AZCountyTempAnomalies" target="_blank" class="btn-dashboard">View Dashboard &rarr;</a>
+        </div>
+
+        <img src="../assets/project-3-dashboard.png" class="project-hero" alt="Arizona County Temperature Anomalies Dashboard">
+
+        <div class="project-content">
+
+            <div class="project-section">
+                <h2>The Misconception</h2>
+                <p>Many Arizonans believe Phoenix is only heating up because of all the new construction — more concrete, more pavement, fewer trees. They assume the rest of Arizona is fine, and that one cool summer proves climate change isn't real.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>What I Created</h2>
+                <p>An interactive visualization showing temperature patterns for all 15 Arizona counties from 1950 to 2025. Each county gets its own timeline where blue bars represent cooler-than-normal months and orange bars show hotter-than-normal months. A companion map shows where each county is located, and you can hit "play" to watch the warming unfold decade by decade.</p>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1.25rem;">
+                    <div class="project-card">
+                        <strong>What It Reveals</strong>
+                        <p>The data doesn't lie. Whether you're in remote Coconino County, agricultural Yuma, or urban Maricopa, the pattern is the same: predominantly blue (cool) from the 1950s through the early 1980s, then a dramatic shift to nearly all orange (hot) from the 1990s onward. This isn't just Phoenix. This is statewide.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Why It Matters</strong>
+                        <p>This visualization directly counters climate skepticism by showing that warming isn't limited to areas with urban development. It gives journalists, educators, policymakers, and residents concrete evidence that Arizona's climate is changing — no matter where you live in the state.</p>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote>
+                Yes, Phoenix is getting hotter. But so is Flagstaff. So is Tucson. So is every corner of Arizona. The occasional cool year doesn't change the unmistakable 75-year trend.
+            </blockquote>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Detailed Project Overview</h2>
+                <div class="project-grid" style="margin-bottom:1.5rem;">
+                    <div class="project-card">
+                        <strong>Goal</strong>
+                        <p>Create a unique time-series visualization covering all counties in Arizona from 1950 to August 2025, demonstrating the urban heat island effect and climate change impact across the whole state, not just Phoenix.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Scope</strong>
+                        <p>Analyze NOAA climate data from 1950–2025 to visualize Arizona's temperature deviation from historical baselines using a time-series bar chart with all counties listed, emphasizing the acceleration of warming trends over time.</p>
+                    </div>
+                </div>
+                <h3>Key Visualization Aspects</h3>
+                <ul>
+                    <li><strong>Bar Chart Time Series Design:</strong> A unique, faded approach to small bars that display color-coded differences between positive and negative anomalies in each month compared to the baseline</li>
+                    <li><strong>Interactive Play Button:</strong> Option to push play and see the change over time, following along with a small map of Arizona's counties to see the effects from a geographical standpoint</li>
+                    <li><strong>Climate Storytelling:</strong> Used "hot" and "cold" colors to differentiate between the extent of the anomaly difference beyond the baseline</li>
+                    <li><strong>Temporal Pattern Analysis:</strong> Clearly shows the transition from cooler-than-baseline temperatures (1950 to about 1980) to consistently hotter conditions (1990s–present)</li>
+                </ul>
+            </div>
+
+            <img src="../assets/project-3-detail.png" style="width:100%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.08);" alt="Arizona county detail view">
+
+            <div class="project-section">
+                <div class="project-grid-3">
+                    <div class="project-card">
+                        <strong>Climate Communication</strong>
+                        <p>Makes complex climate data accessible through intuitive visual design</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Urban Planning</strong>
+                        <p>Evidence for policy decisions regarding development and heat mitigation</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Environmental Awareness</strong>
+                        <p>Demonstrates real-world climate change impacts at the local level</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <div class="project-card">
+                    <p class="challenge-title">Counties Not Recognized Geographically</p>
+                    <p>There was a small instance where the counties of Yuma and Greenlee were not being recognized, even though the data was similar across counties.</p>
+                    <p><strong>Solution:</strong> Standardized the data within the map options in Tableau and "overrode" the data to force it to recognize the missing counties.</p>
+                </div>
+            </div>
+
+            <img src="../assets/project-3-challenge.png" style="width:100%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.08);" alt="County recognition challenge screenshot">
+
+            <hr>
+
+            <div class="project-section">
+                <h2>The Approach & Process</h2>
+                <div class="project-card" style="margin-bottom:1rem;">
+                    <strong>Temperature Anomaly Methodology</strong>
+                    <p>The NOAA Time Series data has a baseline period option, where you can select a range of years to find the difference between the month highlighted and the average of that baseline within your measurement period.</p>
+                    <p>I selected the most recent gap of 30 years that is commonly chosen, from 1991–2020. With the years being more recent, you can also determine the severity of the most recent decades' warming trends.</p>
+                </div>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <strong>Data Integration</strong>
+                        <p>Loads and combines 15 separate county CSV files into a union. Handles YYYYMM date format and consolidates decades of records</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Temperature Processing</strong>
+                        <p>F→C conversion through simple Tableau calculations. Anomaly conversion from Fahrenheit to Celsius. Extracts year and month components for temporal analysis</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section-highlight">
+                <h3 style="color:var(--text);font-size:1.1rem;margin-bottom:1rem;">Technical Achievement</h3>
+                <ul>
+                    <li><strong>Intuitive Tableau Design:</strong> Implemented calculated fields and custom chart types to create non-standard visualization combined with an interactive map</li>
+                    <li><strong>Data Storytelling:</strong> Combined quantitative analysis with compelling visual narrative</li>
+                    <li><strong>Color Theory & Psychology:</strong> Intuitive cool-to-hot color coding reinforcing data meaning</li>
+                </ul>
+            </div>
+
+            <p class="final-statement">This project showcases Tableau visualization skills, climate data analysis expertise, and the ability to transform complex environmental data into compelling, actionable insights for both technical and general audiences.</p>
+
+            <div class="project-section">
+                <h2>Data Sources</h2>
+                <p><strong>NOAA Climate at a Glance</strong></p>
+                <p><strong>Source:</strong> <a href="https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/county/time-series" target="_blank" class="about-link">NOAA National Centers for Environmental Information</a></p>
+                <p><strong>Dataset:</strong> Climate at a Glance: County Time Series</p>
+                <p><strong>Coverage:</strong> All 15 Arizona Counties — monthly temperature records, 1950–2025</p>
+                <p><strong>Baseline Period:</strong> 1991–2020 (30-year climatological reference)</p>
+                <p><strong>Published:</strong> August 2025, retrieved September 4, 2025</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mark Rubin</p>
+    </footer>
+
+</body>
+</html>

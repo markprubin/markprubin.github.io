@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix is Only Getting Hotter | Mark Rubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="../index.html" class="nav-name">Mark Rubin</a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#portfolio">Work</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="mailto:mark.p.rubin@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#portfolio" class="back-link">&larr; Back to Work</a>
+
+        <span class="project-tag">Urban Heat</span>
+        <h1>Phoenix is Only Getting Hotter</h1>
+        <div class="project-header-row">
+            <p class="project-subtitle">An interactive infographic — 85 years of Phoenix heat, designed to be felt as much as read</p>
+            <a href="https://public.tableau.com/views/Phoenixisonlygettinghotter___/PhxTemps" target="_blank" class="btn-dashboard">View Dashboard &rarr;</a>
+        </div>
+
+        <img src="../assets/project-6-dashboard.png" class="project-hero" alt="Phoenix Heat Streaks Dashboard">
+
+        <div class="project-content">
+
+            <div class="project-section">
+                <h2>The Design Intent</h2>
+                <p>Most climate charts look like climate charts — grey axes, dense labels, a trend line you have to squint at. This one doesn't. Built on a warm cream background with a pastel palette pulled from a desert sunrise — teal, coral, lavender, soft orange — the infographic is designed to feel like something worth reading before a single number registers. The illustrated cactus silhouette and wavy ribbon motif in the corner anchor it visually in Phoenix without saying a word.</p>
+                <p>The goal was to build something that a resident, a journalist, or a policymaker could hand to someone who doesn't follow climate data and have them immediately understand what they're looking at.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>The Interactive Core</h2>
+                <p>The centerpiece of the dashboard is a <strong>degree counter</strong> — a single control that filters every element on the page simultaneously. Dial it from 90°F to 130°F and watch the seasonal scatter plot, the Top 10 years table, and the 85-year streak bar chart all respond at once. It transforms what could be a static summary into something you explore.</p>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1.25rem;">
+                    <div class="project-card">
+                        <strong>Seasonal Scatter Plot</strong>
+                        <p>Each dot is a single day's high temperature, colored by season — teal for winter, red/coral for summer, orange for fall, and pink/salmon for spring. The degree counter does something clever here: dots that meet or exceed the selected threshold become <strong>filled</strong>, while days below it remain hollow outlines. As you raise the threshold, the filled dots retreat toward the peak of summer — but lower it to 100°F and watch what happens to the shoulders of the year. Heat pushing into months it doesn't belong in — that bleed is the most unsettling thing the scatter plot reveals.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Top 10 Years Table</strong>
+                        <p>As you move the degree counter, the table updates to show which years logged the most days at or above that threshold. It's a leaderboard that reshuffles depending on what kind of heat you're asking about — and no matter where you set it, recent years keep rising to the top. The occasional mid-century outlier reminds you this isn't new, but the pattern of who dominates is unmistakable.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>85-Year Streak Bar Chart</strong>
+                        <p>From 1941 to 2025, each bar represents the longest consecutive run of days above the selected threshold in that year. The pattern is clear: more recent years stack taller, the variation narrows, and the baseline creeps upward decade by decade. 2024 stands as a structural outlier — a record that resets expectations for what a Phoenix summer looks like going forward.</p>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote>
+                In 2024, Phoenix hit 100°F or higher for 133 days. The streaks are longer, the records keep falling, and the recent years dominate every leaderboard. This isn't a trend — it's the new baseline.
+            </blockquote>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Design & Color System</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <strong>Palette</strong>
+                        <p>Warm cream background, teal for cool/winter data, coral and lavender for summer and interactive elements. The palette evokes a desert morning — familiar to Phoenix residents, approachable to everyone else.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Typography</strong>
+                        <p>A bold serif display font for the title creates editorial weight. Supporting text stays clean and light, keeping the emphasis on the data and the illustrated elements rather than the labels.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Illustration</strong>
+                        <p>A saguaro cactus silhouette and wavy ribbon motif ground the dashboard geographically without the need for a map. It's immediately legible as Phoenix, Arizona.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Layout</strong>
+                        <p>Asymmetric two-column layout balances the data-dense scatter plot and bar chart against the calmer top-10 table and narrative text panels, preventing visual overload.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <div class="project-card">
+                    <p class="challenge-title">Custom Fonts in Tableau Public</p>
+                    <p>Tableau Public doesn't support custom fonts — only web-safe fonts render correctly once a workbook is published. This meant the custom brush typography and decorative lettering in the infographic's title and design elements couldn't be produced inside Tableau directly.</p>
+                    <p><strong>Solution:</strong> Built those elements in Canva, where any font is available, and incorporated them as part of the overall design. The charts, labels, and all interactive pieces use web-safe fonts within Tableau as intended.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Behind the Data</h2>
+                <div class="project-card" style="margin-bottom:1.25rem;">
+                    <strong>Data Pipeline</strong>
+                    <p>A Python script calls the Open-Meteo historical weather API to fetch every daily maximum temperature recorded at Phoenix Sky Harbor since January 1, 1940. For each year and each degree threshold (90°F–130°F), the script computes the longest consecutive streak of days at or above that temperature. The result is two clean CSVs — one of raw daily temps, one of annual streak data — ready for Tableau.</p>
+                    <p>The script uses today's date as its end point automatically, so re-running it always produces a current dataset. A <code>--skip-fetch</code> flag skips the API call and recomputes streaks from the existing CSV, useful for testing without hitting rate limits.</p>
+                </div>
+                <details>
+                    <summary>fetch_phx_temps.py — full source <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                    <div>
+                        <pre><code>"""
+Fetches daily max temperature data for Phoenix (Sky Harbor) from Open-Meteo
+and saves it as a CSV ready for Tableau. Also computes max consecutive streaks
+at various temperature thresholds for each year.
+
+Usage: python fetch_phoenix_temps.py
+       python fetch_phoenix_temps.py --skip-fetch
+"""
+
+import requests, csv, os, sys
+from datetime import datetime, date
+from collections import defaultdict
+
+LATITUDE = 33.4373
+LONGITUDE = -112.0078
+START_DATE = "1940-01-01"
+END_DATE = date.today().strftime("%Y-%m-%d")
+TEMP_CSV = "phoenix_daily_max_temp.csv"
+STREAK_CSV = "phoenix_max_streaks.csv"
+THRESHOLD_MIN = 90
+THRESHOLD_MAX = 130
+
+
+def fetch_and_save_temps():
+    url = "https://archive-api.open-meteo.com/v1/archive"
+    params = {
+        "latitude": LATITUDE, "longitude": LONGITUDE,
+        "start_date": START_DATE, "end_date": END_DATE,
+        "daily": "temperature_2m_max",
+        "temperature_unit": "fahrenheit",
+        "timezone": "America/Phoenix",
+    }
+    data = requests.get(url, params=params).raise_for_status() or requests.get(url, params=params).json()
+    dates = data["daily"]["time"]
+    temps = data["daily"]["temperature_2m_max"]
+    with open(TEMP_CSV, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(["date", "year", "month", "day", "tmax_f"])
+        for d, temp in zip(dates, temps):
+            dt = datetime.strptime(d, "%Y-%m-%d")
+            writer.writerow([d, dt.year, dt.month, dt.day, temp])
+    return dates, temps
+
+
+def compute_streaks(dates, temps):
+    yearly = defaultdict(list)
+    for d, t in zip(dates, temps):
+        yearly[int(d[:4])].append((d, t))
+    valid_temps = [t for t in temps if t is not None]
+    effective_max = min(THRESHOLD_MAX, int(max(valid_temps)) + 1)
+    results = []
+    for threshold in range(THRESHOLD_MIN, effective_max + 1):
+        for year in sorted(yearly.keys()):
+            max_streak = current_streak = 0
+            for d, tmax in yearly[year]:
+                if tmax is not None and tmax >= threshold:
+                    current_streak += 1
+                    max_streak = max(max_streak, current_streak)
+                else:
+                    current_streak = 0
+            results.append({"year": year, "threshold": threshold, "max_streak": max_streak})
+    return results
+
+
+def main():
+    skip_fetch = "--skip-fetch" in sys.argv
+    if skip_fetch and os.path.exists(TEMP_CSV):
+        dates, temps = [], []
+        with open(TEMP_CSV) as f:
+            for row in csv.DictReader(f):
+                dates.append(row["date"])
+                val = row["tmax_f"]
+                temps.append(float(val) if val and val != "None" else None)
+    else:
+        dates, temps = fetch_and_save_temps()
+    results = compute_streaks(dates, temps)
+    with open(STREAK_CSV, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["year", "threshold", "max_streak"])
+        writer.writeheader()
+        writer.writerows(results)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+                    </div>
+                </details>
+            </div>
+
+            <div class="project-section">
+                <h2>Data Sources</h2>
+                <p><strong>Open-Meteo Historical Weather API</strong></p>
+                <p><strong>Source:</strong> <a href="https://open-meteo.com/" target="_blank" class="about-link">Open-Meteo.com</a></p>
+                <p><strong>Station:</strong> Phoenix Sky Harbor International Airport (33.4373°N, 112.0078°W)</p>
+                <p><strong>Variable:</strong> Daily maximum temperature (°F), 2m height</p>
+                <p><strong>Coverage:</strong> January 1, 1940 – present (auto-updates on each run)</p>
+                <p><strong>Timezone:</strong> America/Phoenix (no daylight saving)</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mark Rubin</p>
+    </footer>
+
+</body>
+</html>

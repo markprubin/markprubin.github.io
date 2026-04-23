@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polar Sea Ice in Decline | Mark Rubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="../index.html" class="nav-name">Mark Rubin</a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#portfolio">Work</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="mailto:mark.p.rubin@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#portfolio" class="back-link">&larr; Back to Work</a>
+
+        <span class="project-tag">Climate Analysis</span>
+        <h1>Polar Sea Ice in Decline: Arctic Steady, Antarctic Sudden</h1>
+        <div class="project-header-row">
+            <p class="project-subtitle">Visualizing 45 years of polar sea ice loss through monthly anomalies</p>
+            <a href="https://public.tableau.com/app/profile/mark.rubin7829/viz/ArcticAntarcticSeaIceExtent/Dashboard1?publish=yes" target="_blank" class="btn-dashboard">View Dashboard &rarr;</a>
+        </div>
+
+        <img src="../assets/project-1-dashboard.png" class="project-hero" alt="Polar Sea Ice Dashboard">
+
+        <div class="project-content">
+
+            <div class="project-section">
+                <h2>The Situation</h2>
+                <p>Both polar ice caps are losing ice — but in fundamentally different ways. The Arctic has been in slow, steady decline for decades. The Antarctic held stable for years, then collapsed almost overnight. How do you show both stories in a single view that makes the contrast unmistakable?</p>
+            </div>
+
+            <div class="project-section">
+                <h2>What I Created</h2>
+                <p>A stacked dual-panel dot plot comparing monthly sea ice extent anomalies at both poles from 1979 to 2024, measured against the 1981–2010 climatological baseline.</p>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1.25rem;">
+                    <div class="project-card">
+                        <strong>1 · Antarctic Panel (Top)</strong>
+                        <p>Monthly anomalies show decades of stability, with dots hovering near or above zero through 2014. Then a dramatic plunge: starting in 2016, the dots shift decisively into negative territory. A highlighted annotation box draws attention to the post-2016 regime shift, where September 2023 set a record low of 16.96 M km². Scientists are still debating whether this represents a permanent structural change in Antarctic sea ice behavior.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>2 · Arctic Panel (Bottom)</strong>
+                        <p>A textbook climate signal. Blue dots dominate the early record, gradually giving way to an unmistakable sea of dark red by the 2010s and 2020s. The descent is steady and relentless — no recovery, no reversal. By 2024, the annual anomaly reached −1.42 M km², the largest on record. Summer months show the most extreme departures, with September anomalies exceeding −2 M km².</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>3 · Diverging Color Scale</strong>
+                        <p>A shared blue-to-red color encoding (ranging from −2.88 to +1.37 M km²) allows instant visual comparison. Blue dots represent months with more ice than the baseline average; red dots represent months with less. The color gradient turns the raw numbers into an intuitive visual language.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section-highlight">
+                <h2>Why It Matters</h2>
+                <p>Polar sea ice is a critical indicator of global climate health. Arctic ice loss accelerates warming through reduced albedo, while Antarctic ice instability carries implications for global sea level rise. These visualizations give researchers, educators, policymakers, and journalists an immediate understanding of the pace and pattern of change at both poles — and the alarming fact that both are now simultaneously below their long-term averages for the first time in the satellite era.</p>
+            </div>
+
+            <blockquote>
+                The Arctic's decline is a slow erosion that's been building for decades. Antarctica's collapse came fast and without warning. Together, they show that polar ice loss is no longer a single-hemisphere problem — it's a global one.
+            </blockquote>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Detailed Project Overview</h2>
+                <div class="project-grid" style="margin-bottom:1.5rem;">
+                    <div class="project-card">
+                        <strong>Goal</strong>
+                        <p>Create a comparative polar sea ice monitoring dashboard that visualizes monthly extent anomalies for both the Arctic and Antarctic, revealing contrasting decline patterns and enabling side-by-side analysis of long-term climate trends at both poles.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Scope</strong>
+                        <p>Analyze 45 years of satellite-derived monthly sea ice extent data (1979–2024) from the NSIDC Sea Ice Index, calculating anomalies against the standard 1981–2010 climatological baseline for both hemispheres.</p>
+                    </div>
+                </div>
+                <h3>Key Visualization Aspects</h3>
+                <ul>
+                    <li><strong>Stacked Dual-Panel Layout:</strong> Vertically aligned scatter plots with a shared x-axis and matching y-axis scale, enabling direct visual comparison between Antarctic (top) and Arctic (bottom) trends</li>
+                    <li><strong>Diverging Color Encoding:</strong> Blue-to-red color scale mapped to anomaly values, providing an immediate visual signal of whether each month is above or below the long-term baseline</li>
+                    <li><strong>Contextual Annotations:</strong> Region-specific narrative text placed within each panel explaining key findings, trend onset dates, and record values</li>
+                    <li><strong>Highlighted Regime Shift:</strong> An annotation box on the Antarctic panel draws attention to the post-2016 collapse</li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h3 style="color:var(--text);font-size:1.1rem;">Key Metrics</h3>
+                <table class="project-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Arctic</th>
+                            <th>Antarctic</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>2024 Annual Anomaly</strong></td>
+                            <td style="color:#dc2626;font-weight:600;">−1.42 M km²</td>
+                            <td style="color:#dc2626;font-weight:600;">−0.82 M km²</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Worst Single Month</strong></td>
+                            <td>Sep 2012 (−2.88)</td>
+                            <td>Sep 2023 (−1.66)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trend Onset</strong></td>
+                            <td>~2000</td>
+                            <td>~2016</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Record Low Extent</strong></td>
+                            <td>Sep 2012 (3.63 M km²)</td>
+                            <td>Sep 2023 (16.96 M km²)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <div class="project-card">
+                        <p class="challenge-title">Comparing Two Regions with Different Ice Behaviors</p>
+                        <p>Arctic and Antarctic sea ice follow opposite seasonal cycles and have fundamentally different baseline magnitudes. Showing raw extent values side by side would obscure the trend signal behind seasonal noise and scale differences.</p>
+                        <p><strong>Solution:</strong> Calculated monthly anomalies against each region's own 1981–2010 baseline, normalizing both datasets to a common "departure from normal" metric. This strips out the seasonal cycle and scale differences, making the two poles directly comparable on a shared y-axis.</p>
+                    </div>
+                    <div class="project-card">
+                        <p class="challenge-title">Conveying Both Gradual and Sudden Change</p>
+                        <p>The Arctic story is a slow decline over 25+ years. The Antarctic story is a sudden collapse in under a decade. A single visualization approach risks emphasizing one narrative at the expense of the other.</p>
+                        <p><strong>Solution:</strong> Used a stacked vertical layout with identical axis scales so the viewer's eye naturally moves between panels and registers the contrast. Targeted annotations within each panel explain the specific pattern without requiring the viewer to interpret the data unaided.</p>
+                    </div>
+                    <div class="project-card">
+                        <p class="challenge-title">Making 1,100+ Data Points Readable</p>
+                        <p>With 552 monthly anomalies per pole, visual clutter was a real risk. Traditional line charts at this density become noisy and hard to parse.</p>
+                        <p><strong>Solution:</strong> Used a dot plot approach rather than connected lines, allowing each month to stand as an individual data point. The diverging color scale does the heavy lifting — the viewer doesn't need to trace a line, they just see the field of color shift from blue to red over time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section-highlight">
+                <h3 style="color:var(--text);font-size:1.1rem;margin-bottom:1rem;">Technical Achievement</h3>
+                <ul>
+                    <li><strong>Anomaly Calculation Pipeline:</strong> Computed 1981–2010 monthly baselines (12 values per pole) from raw extent data, then derived 552 monthly anomalies per hemisphere</li>
+                    <li><strong>Tableau Visualization Design:</strong> Dual-panel scatter plot with synchronized axes, diverging color palette, and embedded annotations achieving a high information-to-ink ratio</li>
+                    <li><strong>Data Storytelling:</strong> Strategic use of color, layout, and annotation to guide the viewer through two distinct climate narratives within a single cohesive dashboard</li>
+                </ul>
+            </div>
+
+            <p class="final-statement">This project demonstrates the ability to transform complex, multi-decadal satellite datasets into a clear comparative narrative, using anomaly analysis, strategic color encoding, and editorial annotation to communicate two distinct but interconnected polar climate stories within a single dashboard.</p>
+
+            <div class="project-section">
+                <h2>Data Sources</h2>
+                <p><strong>NSIDC Sea Ice Index, Version 3</strong> — Fetterer, F., K. Knowles, W. N. Meier, M. Savoie, and A. K. Windnagel (2017, updated daily)</p>
+                <ul>
+                    <li><strong>Baseline Period:</strong> 1981–2010 (standard NSIDC climatological reference)</li>
+                    <li><strong>Method:</strong> For each of the 12 calendar months, computed the mean extent across the 30 baseline years. Each monthly observation was then expressed as a departure from its corresponding monthly baseline value.</li>
+                    <li><strong>Result:</strong> Positive anomalies (blue) indicate more ice than the 1981–2010 average; negative anomalies (red) indicate less ice</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mark Rubin</p>
+    </footer>
+
+</body>
+</html>

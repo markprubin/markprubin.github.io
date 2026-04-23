@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yakima Basin Water Crisis | Mark Rubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="../index.html" class="nav-name">Mark Rubin</a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#portfolio">Work</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="mailto:mark.p.rubin@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#portfolio" class="back-link">&larr; Back to Work</a>
+
+        <span class="project-tag">Water Crisis</span>
+        <h1>A Warning from the Yakima: Washington's Water Future in a Warming Climate</h1>
+        <div class="project-header-row">
+            <p class="project-subtitle">Visualizing severe drought across Washington's agricultural heartland</p>
+            <a href="https://public.tableau.com/app/profile/mark.rubin7829/viz/YakimaPDSI/YakimaPDSI" target="_blank" class="btn-dashboard">View Dashboard &rarr;</a>
+        </div>
+
+        <div class="published-callout" style="margin-bottom:2.5rem;">
+            <p class="callout-label">Published Article</p>
+            <p class="callout-source">Center for Environmental Law &amp; Policy</p>
+            <a href="https://celp.org/2025/12/09/a-warning-from-the-yakima-washingtons-water-future-in-a-warming-climate/" target="_blank">Read the published article &rarr;</a>
+        </div>
+
+        <div style="margin-bottom:2.5rem;">
+            <div class="img-tab-row" id="img-tabs">
+                <button class="img-tab-btn active" onclick="showTab(0)">Drought Severity Index</button>
+                <button class="img-tab-btn" onclick="showTab(1)">Reservoir Map</button>
+                <button class="img-tab-btn" onclick="showTab(2)">Cle Elum Storage</button>
+            </div>
+            <div id="img-panel-0"><img src="../assets/project-5-pdsi.png" style="width:100%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.08);" alt="Yakima Palmer Drought Severity Index"></div>
+            <div id="img-panel-1" style="display:none;"><img src="../assets/project-5-reservoir-map.png" style="width:100%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.08);" alt="Yakima Reservoir Map"></div>
+            <div id="img-panel-2" style="display:none;"><img src="../assets/project-5-storage.png" style="width:100%;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.08);" alt="Cle Elum Reservoir Storage"></div>
+        </div>
+        <script>
+            (function() {
+                window.showTab = function(i) {
+                    document.querySelectorAll('[id^="img-panel-"]').forEach(function(p, j) {
+                        p.style.display = j === i ? 'block' : 'none';
+                    });
+                    document.querySelectorAll('.img-tab-btn').forEach(function(b, j) {
+                        b.classList.toggle('active', j === i);
+                    });
+                };
+            })();
+        </script>
+
+        <div class="project-content">
+
+            <div class="project-section">
+                <h2>The Situation</h2>
+                <p>The Yakima Basin in central Washington is experiencing its worst water shortage in decades. But how do you make people understand just how dire it is? Numbers in a spreadsheet don't capture the urgency.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>What I Created</h2>
+                <p>Three complementary visualizations that tell the complete story:</p>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1rem;">
+                    <div class="project-card">
+                        <strong>1 · The Reservoir Map</strong>
+                        <p>A geographic snapshot showing all five major reservoirs at critically low levels. The largest, Kachess Reservoir, sits at just 16% capacity. The others? Between 4–19%. The visual is stark: these reservoirs, represented by glass icons on the map, are nearly empty.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>2 · 130 Years of Storage Data</strong>
+                        <p>A time-series chart of Cle Elum Reservoir showing seasonal patterns from the 1890s to today. The recent years stand out dramatically — water levels that once reliably climbed above historical averages now barely reach half capacity. Three major droughts in the 2010s and 2020s are clearly marked, with the current situation being the worst yet.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>3 · The Palmer Drought Severity Index</strong>
+                        <p>A color-coded timeline showing wet periods (green) versus drought periods (red/pink) since 1998. The pattern shift is unmistakable: after 2013, the region entered extended drought with increasingly severe episodes. The 2020s show extreme drought conditions dominating the landscape.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <div class="project-card" style="margin-bottom:1rem;">
+                    <strong>Why It Matters</strong>
+                    <p>The Yakima Basin supplies water to one of the nation's most productive agricultural regions. These visualizations provide water managers, farmers, policymakers, and journalists with clear evidence that this isn't a temporary dry spell — it's a fundamental shift in water availability that demands immediate action.</p>
+                </div>
+                <div class="project-card">
+                    <strong>The Message</strong>
+                    <p>The reservoirs aren't just low this year. They're consistently failing to refill to historical levels, decade after decade. That's not weather variability — that's climate change.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Detailed Project Overview</h2>
+                <div class="project-grid" style="margin-bottom:1.5rem;">
+                    <div class="project-card">
+                        <strong>Goal</strong>
+                        <p>Create a comprehensive water resource monitoring system for the Yakima River Basin that visualizes current reservoir conditions, historical storage patterns, and drought severity to inform stakeholders about the region's water crisis.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Scope</strong>
+                        <p>Analyze water storage data across five Yakima Basin reservoirs (2012–2025) and Palmer Drought Severity Index data from 1893 to present, creating an integrated visualization system combining geographic context, temporal analysis, and drought metrics.</p>
+                    </div>
+                </div>
+                <h3>Key Visualization Aspects</h3>
+                <ul>
+                    <li><strong>Geographic Context Map:</strong> Interactive Mapbox visualization showing reservoir locations along the Yakima River system with real-time capacity percentages displayed through intuitive container icons</li>
+                    <li><strong>Time-Series Reservoir Analysis:</strong> Area chart tracking Cle Elum Reservoir storage from 2012–2025, highlighting critical drought years (2015, 2019, 2021) and comparing current levels against 50-year historical averages</li>
+                    <li><strong>Drought Severity Tracking:</strong> Palmer Drought Severity Index visualization spanning 130+ years (1893–present), revealing increasing climate volatility and recent extreme drought conditions in Yakima County</li>
+                </ul>
+                <div class="project-grid" style="margin-top:1.25rem;">
+                    <div class="project-card">
+                        <strong>Agricultural Planning</strong>
+                        <p>Enables farmers and irrigation districts to make informed decisions about crop planning and water allocation</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Policy Development</strong>
+                        <p>Provides evidence for water resource management policies and drought response planning</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Mapbox Integration</strong>
+                        <p>Custom geographic visualization with styled basemaps, river systems, and interactive reservoir indicators</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Climate Data Processing</strong>
+                        <p>Integration of PDSI data spanning over a century, with color-coded severity classifications and seasonal smoothing</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Challenges & Solutions</h2>
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <div class="project-card">
+                        <p class="challenge-title">Visualizing Cyclical Reservoir Patterns</p>
+                        <p>Reservoir storage follows distinct seasonal cycles — filling during spring snowmelt and depleting through summer irrigation season. The challenge was displaying these natural fluctuations while highlighting abnormal drought conditions.</p>
+                        <p><strong>Solution:</strong> Implemented reference lines showing both "Overall Average (1961–2010)" and "Annual Low Point Average (1961–2010)" to provide context for normal seasonal variation versus drought-induced depletion. This allows viewers to distinguish between expected seasonal lows and crisis-level storage.</p>
+                    </div>
+                    <div class="project-card">
+                        <p class="challenge-title">Communicating Current Crisis Severity</p>
+                        <p>With five reservoirs at different capacity levels, conveying the system-wide water shortage required a clear, immediate visual language.</p>
+                        <p><strong>Solution:</strong> Designed custom container icons sized proportionally to capacity, with bright cyan coloring for immediate visual recognition against the dark basemap. Positioning reservoirs geographically while displaying percentage values creates both spatial and quantitative understanding.</p>
+                    </div>
+                    <div class="project-card">
+                        <p class="challenge-title">Connecting Short-Term Trends to Long-Term Climate Patterns</p>
+                        <p>Reservoir data alone might suggest temporary drought conditions, but understanding the broader climate context requires historical perspective.</p>
+                        <p><strong>Solution:</strong> Integrated the Palmer Drought Severity Index spanning the last 30 years, revealing that recent extreme drought events (2020s) fit within a pattern of increasing climate volatility and prolonged dry periods since 2013.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>The Approach & Process</h2>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem;">
+                    <div class="project-card">
+                        <strong>Reservoir Storage Data</strong>
+                        <ul>
+                            <li><strong>Source:</strong> U.S. Bureau of Reclamation (USBR)</li>
+                            <li><strong>Coverage:</strong> Five major Yakima Basin reservoirs (Keechelus, Kachess, Cle Elum, Bumping Lake, Rimrock)</li>
+                            <li><strong>Temporal Range:</strong> 2012–2025 for detailed analysis</li>
+                            <li><strong>Baseline Period:</strong> 1961–2010 for historical comparison</li>
+                            <li><strong>Measurement:</strong> Acre-feet storage capacity</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <strong>Palmer Drought Severity Index (PDSI)</strong>
+                        <ul>
+                            <li>Standardized drought metric ranging from &minus;6 (extreme drought) to +6 (extremely wet)</li>
+                            <li>Incorporates temperature, precipitation, and soil moisture data</li>
+                            <li><strong>Historical coverage:</strong> 1893–present for Yakima County</li>
+                            <li>Provides long-term climate context beyond reservoir measurements</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>Visualization Design</h3>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:0.75rem;">
+                    <div class="project-card">
+                        <strong>Geographic Visualization (Mapbox)</strong>
+                        <ul>
+                            <li>Dark theme to emphasize water features and data elements</li>
+                            <li>Custom styled river systems (Yakima, Naches, Tieton) in cyan</li>
+                            <li>Custom SVG container shapes representing fill levels (4%, 10%, 16%, 19%)</li>
+                            <li>Strategic label placement with geographic reference cities</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <strong>Time-Series Analysis (Tableau)</strong>
+                        <ul>
+                            <li>Area chart design emphasizing seasonal storage patterns</li>
+                            <li>Dual reference lines for overall average and annual low points</li>
+                            <li>Annotated drought years (2015, 2019, 2021) with contextual callouts</li>
+                            <li>Gradient color scheme showing depth of storage depletion</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <strong>Climate Context (PDSI Visualization)</strong>
+                        <ul>
+                            <li>Three-color classification: green (wet), yellow (moderate), red (extreme/severe drought)</li>
+                            <li>Zero-line reference for normal conditions</li>
+                            <li>Extended time series revealing century-long patterns</li>
+                            <li>Recent trend highlighting (2013–present) showing persistent drought conditions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <p class="final-statement">This multi-layered approach combines current snapshot data (reservoir map), medium-term trends (2012–2025 storage), and long-term climate patterns (30 years of PDSI) to create a comprehensive picture of the Yakima Basin's water crisis.</p>
+
+            <div class="project-section">
+                <h2>Data Sources</h2>
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <div class="project-card">
+                        <strong>U.S. Bureau of Reclamation</strong>
+                        <p><strong>Source:</strong> <a href="https://www.usbr.gov/pn/hydromet/yakima/yaktea.html" target="_blank" class="about-link">USBR Pacific Northwest Hydromet</a></p>
+                        <p>Five major reservoirs, 2012–2025</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>USDA Natural Resources Conservation Service</strong>
+                        <p><strong>Source:</strong> <a href="https://www.nrcs.usda.gov/resources/data-and-reports/snow-and-climate-monitoring-predefined-reports-and-maps" target="_blank" class="about-link">NRCS Snow &amp; Climate Monitoring</a></p>
+                        <p>Palmer Drought Severity Index, Yakima County, 1893–present</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mark Rubin</p>
+    </footer>
+
+</body>
+</html>
