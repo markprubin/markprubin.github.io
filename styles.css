@@ -1,19 +1,21 @@
 /* =====================
    Reset & Base
    ===================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --bg:        #fafaf9;
-    --text:      #1a1a1a;
-    --muted:     #6b7280;
-    --accent:    #059669;
-    --border:    #e5e7eb;
-    --card-bg:   #ffffff;
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --muted: #6b7280;
+    --accent: #059669;
+    --border: #e5e7eb;
+    --card-bg: #ffffff;
 }
 
 html {
@@ -228,7 +230,7 @@ img {
     left: 0;
     width: 100%;
     padding: 3rem 1.5rem 1.5rem;
-    background: linear-gradient(to top, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 60%, transparent 100%);
     transform: translateY(100%);
     opacity: 0;
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s ease;
@@ -435,11 +437,13 @@ img {
     gap: 0.4rem;
     font-size: 0.9rem;
     color: var(--muted);
-    margin-bottom: 0.6rem;
+    margin-bottom: 1.5rem;
     transition: color 0.2s;
 }
 
-.back-link:hover { color: var(--text); }
+.back-link:hover {
+    color: var(--text);
+}
 
 .project-tag {
     display: block;
@@ -489,7 +493,9 @@ img {
     transition: opacity 0.2s;
 }
 
-.btn-dashboard:hover { opacity: 0.8; }
+.btn-dashboard:hover {
+    opacity: 0.8;
+}
 
 .project-hero {
     width: 100%;
@@ -513,7 +519,7 @@ img {
 }
 
 .project-section-highlight {
-    background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(37,99,235,0.02));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(37, 99, 235, 0.02));
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 2rem;
@@ -549,14 +555,18 @@ img {
     margin-bottom: 0.75rem;
 }
 
-.project-section p:last-child { margin-bottom: 0; }
+.project-section p:last-child {
+    margin-bottom: 0;
+}
 
 .project-section ul {
     margin-left: 1.5rem;
     margin-bottom: 0.75rem;
 }
 
-.project-section strong { color: var(--text); }
+.project-section strong {
+    color: var(--text);
+}
 
 .project-grid {
     display: grid;
@@ -577,11 +587,11 @@ img {
     padding: 1.25rem;
 }
 
-.project-card > strong:first-child {
+.project-card>strong:first-child {
     display: block;
     font-size: 0.83rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--text);
     margin-bottom: 0.4rem;
 }
 
@@ -653,13 +663,15 @@ img {
     align-items: center;
 }
 
-.project-page summary::-webkit-details-marker { display: none; }
+.project-page summary::-webkit-details-marker {
+    display: none;
+}
 
 .project-page details[open] summary {
     border-bottom: 1px solid var(--border);
 }
 
-.project-page details > div {
+.project-page details>div {
     padding: 1.5rem;
 }
 
@@ -684,11 +696,13 @@ img {
     color: var(--muted);
 }
 
-.project-table tr:last-child td { border-bottom: none; }
+.project-table tr:last-child td {
+    border-bottom: none;
+}
 
 .tag-pill {
     display: inline-block;
-    background: rgba(37,99,235,0.08);
+    background: rgba(37, 99, 235, 0.08);
     color: var(--accent);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
@@ -697,7 +711,7 @@ img {
 }
 
 .published-callout {
-    background: linear-gradient(135deg, rgba(37,99,235,0.07), rgba(37,99,235,0.02));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.07), rgba(37, 99, 235, 0.02));
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem 2rem;
@@ -761,9 +775,19 @@ img {
 }
 
 @media (max-width: 768px) {
-    .project-page { padding: 6rem 1.5rem 4rem; }
-    .project-grid, .project-grid-3 { grid-template-columns: 1fr; }
-    .project-header-row { flex-direction: column; align-items: flex-start; }
+    .project-page {
+        padding: 6rem 1.5rem 4rem;
+    }
+
+    .project-grid,
+    .project-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .project-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 /* =====================
@@ -839,7 +863,7 @@ img {
 .footer-heading {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--text);
+    color: var(--accent);
     margin-bottom: 0.5rem;
 }
 

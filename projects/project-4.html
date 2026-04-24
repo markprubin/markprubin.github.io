@@ -154,13 +154,15 @@ for col in desired_order:
 
             <div class="project-section">
                 <h2>The Pipeline: 5 Project Files</h2>
-                <div style="display:flex;flex-direction:column;gap:1rem;">
+                <div style="display:flex;flex-direction:column;gap:1.5rem;">
 
-                    <details>
-                        <summary>1. Main Iceberg Data Scraper · <code>script.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
-                        <div>
-                            <p>Comprehensive web scraping and data collection pipeline. Loads iceberg file references, uses Selenium WebDriver to automate browser interactions, scrapes the US Ice Center website, extracts product IDs from download URLs, and automatically downloads all 547 CSV files.</p>
-                            <pre><code>import os, re, time, pandas as pd, requests
+                    <div>
+                        <p style="font-weight:700;color:var(--text);margin-bottom:0.5rem;">Main Iceberg Data Scraper</p>
+                        <details>
+                            <summary><code>script.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                            <div>
+                                <p>Comprehensive web scraping and data collection pipeline. Loads iceberg file references, uses Selenium WebDriver to automate browser interactions, scrapes the US Ice Center website, extracts product IDs from download URLs, and automatically downloads all 547 CSV files.</p>
+                                <pre><code>import os, re, time, pandas as pd, requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -211,20 +213,23 @@ for i, row in df_final.iterrows():
         if response.status_code == 200:
             with open(os.path.join(output_folder, row["filename"]), "wb") as f:
                 f.write(response.content)</code></pre>
-                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
-                                <span class="tag-pill">Web Scraping</span>
-                                <span class="tag-pill">Selenium</span>
-                                <span class="tag-pill">BeautifulSoup</span>
-                                <span class="tag-pill">Regex</span>
+                                <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                    <span class="tag-pill">Web Scraping</span>
+                                    <span class="tag-pill">Selenium</span>
+                                    <span class="tag-pill">BeautifulSoup</span>
+                                    <span class="tag-pill">Regex</span>
+                                </div>
                             </div>
-                        </div>
-                    </details>
+                        </details>
+                    </div>
 
-                    <details>
-                        <summary>2. Data Consolidation · <code>merge_iceberg_csvs.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
-                        <div>
-                            <p>Combines 547 individual CSV files into a single unified dataset. Scans directory for all CSVs, concatenates DataFrames with column alignment, handles missing data, and adds source file tracking for data lineage.</p>
-                            <pre><code>import pandas as pd
+                    <div>
+                        <p style="font-weight:700;color:var(--text);margin-bottom:0.5rem;">Data Consolidation</p>
+                        <details>
+                            <summary><code>merge_iceberg_csvs.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                            <div>
+                                <p>Combines 547 individual CSV files into a single unified dataset. Scans directory for all CSVs, concatenates DataFrames with column alignment, handles missing data, and adds source file tracking for data lineage.</p>
+                                <pre><code>import pandas as pd
 import os
 from glob import glob
 
@@ -246,19 +251,22 @@ for file in csv_files:
 df_combined = pd.concat(dataframes, axis=0, ignore_index=True, sort=True)
 df_combined.to_csv(output_file, index=False)
 print(f"Saved '{output_file}' with shape {df_combined.shape}")</code></pre>
-                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
-                                <span class="tag-pill">Pandas</span>
-                                <span class="tag-pill">Data Merging</span>
-                                <span class="tag-pill">Error Handling</span>
+                                <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                    <span class="tag-pill">Pandas</span>
+                                    <span class="tag-pill">Data Merging</span>
+                                    <span class="tag-pill">Error Handling</span>
+                                </div>
                             </div>
-                        </div>
-                    </details>
+                        </details>
+                    </div>
 
-                    <details>
-                        <summary>3. Data Standardization · <code>fix_csv.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
-                        <div>
-                            <p>Reorders and standardizes column structure: Iceberg, Last Update, Latitude, Longitude, Length/Width, Area metrics, Remarks. Adds missing columns with null values and enforces consistent schema.</p>
-                            <pre><code>import pandas as pd
+                    <div>
+                        <p style="font-weight:700;color:var(--text);margin-bottom:0.5rem;">Data Standardization</p>
+                        <details>
+                            <summary><code>fix_csv.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                            <div>
+                                <p>Reorders and standardizes column structure: Iceberg, Last Update, Latitude, Longitude, Length/Width, Area metrics, Remarks. Adds missing columns with null values and enforces consistent schema.</p>
+                                <pre><code>import pandas as pd
 
 input_file = "antarctic_icebergs_combined.csv"
 output_file = "antarctic_icebergs_combined_reordered.csv"
@@ -278,18 +286,21 @@ for col in desired_order:
 df = df[desired_order]
 df.to_csv(output_file, index=False)
 print(f"Reordered CSV saved to: {output_file}")</code></pre>
-                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
-                                <span class="tag-pill">Schema Design</span>
-                                <span class="tag-pill">Data Quality</span>
+                                <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                    <span class="tag-pill">Schema Design</span>
+                                    <span class="tag-pill">Data Quality</span>
+                                </div>
                             </div>
-                        </div>
-                    </details>
+                        </details>
+                    </div>
 
-                    <details>
-                        <summary>4. File Validation · <code>search.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
-                        <div>
-                            <p>Validates downloaded files against expected list. Compares expected vs. actual downloads, identifies missing files, generates completion reports, and ensures data pipeline integrity.</p>
-                            <pre><code>import os
+                    <div>
+                        <p style="font-weight:700;color:var(--text);margin-bottom:0.5rem;">File Validation</p>
+                        <details>
+                            <summary><code>search.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                            <div>
+                                <p>Validates downloaded files against expected list. Compares expected vs. actual downloads, identifies missing files, generates completion reports, and ensures data pipeline integrity.</p>
+                                <pre><code>import os
 import pandas as pd
 
 download_folder = "iceberg_csvs"
@@ -313,18 +324,21 @@ if not missing.empty:
     print(f"Missing {len(missing)} file(s). See {output_txt}.")
 else:
     print("All expected files are present.")</code></pre>
-                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
-                                <span class="tag-pill">Validation</span>
-                                <span class="tag-pill">Auditing</span>
+                                <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                    <span class="tag-pill">Validation</span>
+                                    <span class="tag-pill">Auditing</span>
+                                </div>
                             </div>
-                        </div>
-                    </details>
+                        </details>
+                    </div>
 
-                    <details>
-                        <summary>5. Data Exploration · <code>test.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
-                        <div>
-                            <p>Quick data inspection and debugging tool. Loads and displays sample data, shows DataFrame structure and column names, and provides data preview for troubleshooting.</p>
-                            <pre><code>import pandas as pd
+                    <div>
+                        <p style="font-weight:700;color:var(--text);margin-bottom:0.5rem;">Data Exploration</p>
+                        <details>
+                            <summary><code>test.py</code> <span style="font-size:0.8rem;color:var(--muted);font-weight:400;">click to expand</span></summary>
+                            <div>
+                                <p>Quick data inspection and debugging tool. Loads and displays sample data, shows DataFrame structure and column names, and provides data preview for troubleshooting.</p>
+                                <pre><code>import pandas as pd
 
 df_input = pd.read_csv("iceberg_files.csv")
 print("\nFirst 5 rows:")
@@ -332,12 +346,13 @@ print(df_input.head())
 
 print("\nColumn names:")
 print(df_input.columns.tolist())</code></pre>
-                            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
-                                <span class="tag-pill">Debugging</span>
-                                <span class="tag-pill">Exploration</span>
+                                <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;">
+                                    <span class="tag-pill">Debugging</span>
+                                    <span class="tag-pill">Exploration</span>
+                                </div>
                             </div>
-                        </div>
-                    </details>
+                        </details>
+                    </div>
 
                 </div>
             </div>
