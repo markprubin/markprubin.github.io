@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="home">
 
     <!-- Nav -->
     <nav class="nav">
@@ -25,41 +25,65 @@
         </div>
     </nav>
 
-    <!-- About -->
-    <section id="about" class="about-section">
-        <div class="about-inner">
-            <div class="about-card">
-                <div class="about-card-img-wrap">
-                    <img src="assets/Headshot.png" alt="Mark Rubin">
-                </div>
-                <div class="about-card-overlay">
-                    <h3>Mark Rubin</h3>
-                </div>
+    <!-- Hero -->
+    <section id="about" class="hero-section">
+        <div class="hero-left">
+            <p class="hero-greeting">Hello! I'm</p>
+            <h1 class="hero-name">
+                <span class="hero-first">Mark</span>
+                <span class="hero-last">Rubin</span>
+            </h1>
+            <p class="hero-title">Data Storyteller &amp; Climate Advocate</p>
+            <p class="hero-sub">Community connector &middot; 8+ years turning data into action</p>
+            <div class="hero-actions">
+                <a href="#portfolio" class="btn-primary">See My Work</a>
+                <a href="#contact" class="hero-contact">Get in touch &rarr;</a>
             </div>
-            <div class="about-text">
-                <h1>Hi, I'm Mark.</h1>
-                <p class="about-lead">Data storyteller. Community connector. <span class="about-highlight">Climate
-                        advocate.</span></p>
-                <p>I believe data has the power to drive meaningful change — and I've spent 8+ years proving it. From
-                    visualizing drought patterns in Washington's Yakima Basin to tracking scorching temperature
-                    anomalies in Arizona, I transform complex datasets into stories that spark action and inform
-                    decisions.</p>
-                <p>My work lives at the intersection of technical precision and human impact. I've built dashboards that
-                    help water managers understand century-long climate trends, mapped crime patterns to inform safer
-                    communities, and analyzed Formula 1 performance data to settle the GOAT debate. Whether it's
-                    Tableau, Python, or QGIS, the tools are just the beginning — the real work is making the invisible
-                    visible.</p>
-                <p>I've completed climate fellowships with <a href="http://terra.do/" target="_blank"
-                        class="about-link">Terra.do</a> and <a href="https://www.climatebase.org/" target="_blank"
-                        class="about-link">Climatebase</a>, and I'm pursuing graduate education in ocean conservation
-                    because I believe data professionals belong in the community, not just behind the screen.</p>
-                <p>I bring more than analytics and visuals — I bring curiosity, collaboration, and a belief that the
-                    best insights come from listening as much as analyzing. Let's use data to build something that
-                    matters.</p>
-                <div class="about-links">
-                    <a href="#portfolio" class="btn-primary">See My Work</a>
-                </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-photo-wrap">
+                <img src="assets/Headshot.png" alt="Mark Rubin">
             </div>
+        </div>
+    </section>
+
+    <!-- Bio -->
+    <section class="bio-section">
+        <div class="bio-inner">
+            <p class="bio-label">About Me</p>
+
+            <p class="bio-display">
+                I believe <span class="bio-blue">data</span> has the power<br>
+                to drive meaningful change —<br>
+                and I've spent <span class="bio-orange">8+ years</span> proving it.
+            </p>
+
+            <hr class="bio-rule">
+
+            <p class="bio-display">
+                From drought patterns in Washington's Yakima Basin<br>
+                to scorching temperature anomalies in Arizona,<br>
+                I transform complex datasets into <span class="bio-blue">stories<br>
+                that spark action</span> and inform decisions.
+            </p>
+
+            <hr class="bio-rule">
+
+            <p class="bio-display">
+                My work lives at the intersection of<br>
+                <span class="bio-orange">technical precision</span> and <span class="bio-blue">human impact.</span><br>
+                The tools are just the beginning —<br>
+                the real work is making the <span class="bio-orange">invisible visible.</span>
+            </p>
+
+            <hr class="bio-rule">
+
+            <p class="bio-display">
+                I bring more than analytics and visuals.<br>
+                I bring <span class="bio-blue">curiosity, collaboration,</span><br>
+                and a belief that the best insights come<br>
+                from <span class="bio-orange">listening as much as analyzing.</span>
+            </p>
         </div>
     </section>
 
