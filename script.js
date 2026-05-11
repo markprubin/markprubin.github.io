@@ -1,6 +1,6 @@
 const projects = [
     {
-        title: "Short-Lived but Brutal + Social Media Version",
+        title: "Short-Lived but Brutal",
         category: "Climate Science",
         description: "A flame chart showing how long greenhouse gases persist and how hard they hit — height is warming power, length is atmospheric lifetime. Built on HTML5 canvas with IPCC AR6 decay models.",
         image: "assets/ghgflamechart-card.png",
@@ -67,16 +67,10 @@ projects.forEach(project => {
         <div class="portfolio-card-body">
             <div class="portfolio-card-tag">${project.category}</div>
             <div class="portfolio-card-title">${project.title}</div>
+            ${project.instagramUrl ? `<div class="card-badge">+ Social Media Adaptation</div>` : ''}
             <p class="portfolio-card-desc">${project.description}</p>
         </div>
     `;
-
-    if (project.instagramUrl) {
-        const badge = document.createElement('div');
-        badge.className = 'card-badge';
-        badge.textContent = 'Includes Social Media Adaptation';
-        wrap.appendChild(badge);
-    }
 
     wrap.appendChild(card);
     grid.appendChild(wrap);
