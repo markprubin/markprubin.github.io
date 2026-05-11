@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short-Lived but Brutal | Mark Rubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="../index.html" class="nav-name">Mark Rubin</a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#portfolio">Work</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="mailto:mark.p.rubin@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#portfolio" class="back-link">&larr; Back to Work</a>
+
+        <span class="project-tag">Climate Science</span>
+        <h1>Short-Lived but Brutal</h1>
+        <div class="project-header-row">
+            <p class="project-subtitle">A flame chart revealing how long greenhouse gases persist in the atmosphere — and how hard each one hits</p>
+        </div>
+
+        <div class="project-header-links">
+            <a href="../assets/ghg_flame_chart.html" target="_blank" class="fullsize-bar">
+                View Full Sized Chart &rarr;
+            </a>
+            <a href="../assets/ghg_flame_chart_instagram.html" target="_blank" class="fullsize-bar">
+                Instagram Version &rarr;
+            </a>
+        </div>
+
+        <img src="../assets/ghgflamechart-modal.png" class="project-hero" alt="GHG Flame Chart">
+
+        <div class="project-content">
+
+            <div class="project-section">
+                <h2>The Design Intent</h2>
+                <p>Most greenhouse gas comparisons are tables — rows of numbers that flatten the story into a list. This visualization takes a different approach: it renders each gas as a <strong>flame</strong> whose height represents warming power and whose length represents atmospheric lifetime. The result is something visceral. You don't read the chart so much as feel it.</p>
+                <p>The dark background was intentional — it makes the glowing flames pop with a heat-map intensity that tables simply can't convey. Each gas gets its own row, its own color, and its own shape of decay. The visual language is immediately legible: taller means more dangerous per molecule, longer means more persistent.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>The Four Gases</h2>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1.25rem;">
+                    <div class="project-card">
+                        <strong>Methane (CH₄) — GWP₂₀: 83×</strong>
+                        <p>The most urgent near-term target. Methane hits 83 times harder than CO₂ over a 20-year window but has only a ~12-year atmospheric lifetime — meaning cuts made today show up fast. The annotation marks the 63% decay point at the 12-year mark: dramatic decline, but still punishing while it lasts. Responsible for ~30% of current warming despite representing just 19% of emissions.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Nitrous Oxide (N₂O) — GWP₂₀: 273×</strong>
+                        <p>More than three times more powerful than methane over 20 years, with a much slower exit: ~109 years in the atmosphere. The flame is taller and stretches far longer, visualizing a gas that stays committed to its warming work for over a century. Primarily driven by agriculture and fertilizer use, it represents ~7% of current warming.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>SF₆ — GWP₂₀: 16,300×</strong>
+                        <p>The most alarming number in the chart. Sulfur hexafluoride — used in electrical equipment — is 16,300 times more potent than CO₂ over 20 years, and has a lifetime of roughly 3,200 years. The flame stretches nearly the full width of the chart, nearly maintaining its full height at the 3,200-year annotation. A tiny emission makes a very long commitment.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Carbon Dioxide (CO₂) — GWP₂₀: 1× (baseline)</strong>
+                        <p>The weakest per molecule, but the most structurally intractable. CO₂ doesn't follow a simple exponential decay — it removes quickly at first (ocean and biosphere absorption), then much more slowly, with ~20% remaining in the atmosphere effectively permanently. The annotation at 5,000 years confirms it: ~20% of every tonne we emit is with us for millennia. The low flame height belies the real danger.</p>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote>
+                Height is warming power. Length is persistence. SF₆ is terrifyingly tall and nearly never-ending. CO₂ stays low but never fully dies. Methane is the one we can actually do something about — quickly.
+            </blockquote>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Design & Visual System</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <strong>Background</strong>
+                        <p>Deep dark (#0e1117) to maximize contrast with the glowing flame gradients. The darkness also reinforces the tone — these aren't friendly bar charts, they're emissions with consequences.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Color Palette</strong>
+                        <p>Each gas has a distinct color: amber for CH₄, brick-red for N₂O, rose-pink for SF₆, and steel blue for CO₂. Colors were chosen to feel heat-coded while remaining distinct at a glance.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Flame Rendering</strong>
+                        <p>Each flame is built from 300 segments using canvas gradient fills — a core glow, an outer halo, and a hot white highlight at high-intensity areas. The result is a luminous, layered effect that looks rendered rather than drawn.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Log Scale X-Axis</strong>
+                        <p>A linear x-axis would bury methane on the left and leave most of the chart empty. Logarithmic scaling from 1 to 10,000 years lets all four gases breathe while keeping their relative timescales honest.</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Technical Approach</h2>
+                <div class="project-card" style="margin-bottom:1.25rem;">
+                    <strong>Canvas-Based Rendering</strong>
+                    <p>The entire chart is rendered to a 1080×1080 HTML5 canvas at 2× DPR for crisp output at any display density. All drawing is done in vanilla JavaScript — no charting library, no SVG. The flame gradients are built segment-by-segment using <code>createLinearGradient</code>, with separate passes for the outer glow, core, and white-hot center.</p>
+                </div>
+                <div class="project-card">
+                    <strong>Decay Models</strong>
+                    <p>CH₄, N₂O, and SF₆ follow simple exponential decay: <code>e^(−t / lifetime)</code>. CO₂ uses the IPCC multi-phase model — a fast fraction absorbed by oceans and biosphere (45% over ~25 years), a medium fraction (30% over ~200 years), a slow geological fraction (5% over ~3,000 years), and a permanent 20% that never removes. This four-component model is what gives CO₂'s flame its distinctive flat tail.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="project-section">
+                <h2>Data Sources</h2>
+                <p><strong>IPCC Sixth Assessment Report (AR6), Working Group I (2021)</strong></p>
+                <p><strong>Table:</strong> 7.15 — Global Warming Potentials and lifetimes of greenhouse gases</p>
+                <p><strong>GWP₂₀ values used:</strong> CH₄ = 83×, N₂O = 273×, SF₆ = 16,300×, CO₂ = 1× (baseline)</p>
+                <p><strong>Lifetimes:</strong> CH₄ ~12 yr, N₂O ~109 yr, SF₆ ~3,200 yr, CO₂ multi-phase (see above)</p>
+                <p><strong>Warming attribution:</strong> IPCC AR6 synthesis estimates for current warming contribution by gas</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mark Rubin</p>
+    </footer>
+
+</body>
+</html>

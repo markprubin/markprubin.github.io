@@ -1,5 +1,12 @@
 const projects = [
     {
+        title: "Short-Lived but Brutal + Social Media Version",
+        category: "Climate Science",
+        description: "A flame chart showing how long greenhouse gases persist and how hard they hit — height is warming power, length is atmospheric lifetime. Built on HTML5 canvas with IPCC AR6 decay models.",
+        image: "assets/ghgflamechart-card.png",
+        url: "projects/project-7.html"
+    },
+    {
         title: "Phoenix is Only Getting Hotter",
         category: "Urban Heat",
         description: "An interactive infographic tracking 133 days at or above 100°F in Phoenix — the all-time record. Adjust a temperature threshold and watch the entire visualization respond live.",
