@@ -456,9 +456,46 @@ img {
     transition: box-shadow 0.25s, transform 0.25s;
 }
 
+.portfolio-card-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s;
+}
+
+.portfolio-card-wrap .portfolio-card {
+    flex: 1;
+}
+
+.portfolio-card-wrap:hover {
+    transform: translateY(-4px);
+}
+
+.portfolio-card-wrap:hover .portfolio-card {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
 .portfolio-card:hover {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     transform: translateY(-4px);
+}
+
+.card-badge {
+    position: absolute;
+    top: 0;
+    left: 1.25rem;
+    transform: translateY(-100%);
+    background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px 6px 0 0;
+    pointer-events: none;
+    z-index: 2;
+    white-space: nowrap;
 }
 
 .portfolio-card-image {

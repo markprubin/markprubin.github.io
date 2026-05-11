@@ -4,7 +4,8 @@ const projects = [
         category: "Climate Science",
         description: "A flame chart showing how long greenhouse gases persist and how hard they hit — height is warming power, length is atmospheric lifetime. Built on HTML5 canvas with IPCC AR6 decay models.",
         image: "assets/ghgflamechart-card.png",
-        url: "projects/project-7.html"
+        url: "projects/project-7.html",
+        instagramUrl: true
     },
     {
         title: "Phoenix is Only Getting Hotter",
@@ -53,10 +54,12 @@ const projects = [
 const grid = document.getElementById('portfolio-grid');
 
 projects.forEach(project => {
+    const wrap = document.createElement('div');
+    wrap.className = 'portfolio-card-wrap';
+
     const card = document.createElement('a');
     card.href = project.url;
     card.className = 'portfolio-card';
-
     card.innerHTML = `
         <div class="portfolio-card-image">
             ${project.image ? `<img src="${project.image}" alt="${project.title}" loading="lazy">` : ''}
@@ -68,5 +71,13 @@ projects.forEach(project => {
         </div>
     `;
 
-    grid.appendChild(card);
+    if (project.instagramUrl) {
+        const badge = document.createElement('div');
+        badge.className = 'card-badge';
+        badge.textContent = 'Includes Social Media Adaptation';
+        wrap.appendChild(badge);
+    }
+
+    wrap.appendChild(card);
+    grid.appendChild(wrap);
 });
