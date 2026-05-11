@@ -40,6 +40,7 @@ const DPR  = 2;
 const W    = 1080;
 const H    = 1080;
 const TOTAL_SLIDES = 6;
+const DISPLAY = Math.min(W, window.innerWidth);
 
 const gases = [
   {
@@ -109,8 +110,8 @@ function makeCanvas(label) {
   const c = document.createElement('canvas');
   c.width  = W * DPR;
   c.height = H * DPR;
-  c.style.width  = W + 'px';
-  c.style.height = H + 'px';
+  c.style.width  = DISPLAY + 'px';
+  c.style.height = DISPLAY + 'px';
   wrap.appendChild(c);
   document.body.appendChild(wrap);
   const ctx = c.getContext('2d');
