@@ -243,15 +243,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        const heroBgVideo = document.querySelector('.hero-bg-video');
-        const heroWrap    = document.querySelector('.hero-wrap');
-        window.addEventListener('scroll', () => {
-            const bottom = heroWrap.getBoundingClientRect().bottom;
-            const fade   = Math.max(0, Math.min(1, bottom / (window.innerHeight * 0.4)));
-            heroBgVideo.style.opacity = (0.18 * fade).toString();
-        }, { passive: true });
-    </script>
 
 </body>
 
