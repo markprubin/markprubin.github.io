@@ -1239,7 +1239,7 @@ body.home .btn-primary:hover {
 }
 
 .hero-bg-video {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -1248,6 +1248,7 @@ body.home .btn-primary:hover {
     opacity: 0.18;
     pointer-events: none;
     z-index: 0;
+    transition: opacity 0.4s ease;
 }
 
 .hero-section {
