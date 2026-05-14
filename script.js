@@ -75,3 +75,18 @@ projects.forEach(project => {
     wrap.appendChild(card);
     grid.appendChild(wrap);
 });
+
+// Stagger + appear animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.portfolio-card-wrap').forEach((wrap, i) => {
+    if (i % 2 !== 0) wrap.classList.add('even');
+    observer.observe(wrap);
+});
