@@ -13,8 +13,8 @@
     --bg: #fafaf9;
     --text: #1a1a1a;
     --muted: #6b7280;
-    --accent: #3b82f6;
-    --orange: #f9784d;
+    --accent: #61a9ad;
+    --orange: #F4845F;
     --border: #e5e7eb;
     --card-bg: #ffffff;
 }
@@ -1199,10 +1199,10 @@ body.home {
     --bg: #ffffff;
     --text: #0f0f0f;
     --muted: #6b7280;
-    --accent: #3b82f6;
+    --accent: #61a9ad;
     --border: #e5e7eb;
     --card-bg: #f9fafb;
-    --orange: #f9784d;
+    --orange: #F4845F;
 }
 
 body.home .nav {
@@ -1225,8 +1225,10 @@ body.home .btn-primary:hover {
 .hero-section {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    justify-content: center;
+    text-align: center;
     padding: 7rem 4rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -1256,9 +1258,9 @@ body.home .btn-primary:hover {
 }
 
 .hero-left {
-    flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.85rem;
 }
 
@@ -1269,10 +1271,11 @@ body.home .btn-primary:hover {
 }
 
 .hero-name {
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 0.3em;
     font-family: 'Nunito', sans-serif;
-    font-size: clamp(4rem, 9vw, 8.5rem);
+    font-size: clamp(3rem, 9vw, 8.5rem);
     font-weight: 700;
     line-height: 0.95;
     letter-spacing: -0.03em;
@@ -1280,8 +1283,18 @@ body.home .btn-primary:hover {
     margin: 0;
 }
 
+.hero-name-img {
+    width: 100%;
+    max-width: 600px;
+}
+
+.hero-first, .hero-last {
+    position: relative;
+    z-index: 1;
+}
+
 .hero-first {
-    color: var(--accent);
+    color: #61a9ad;
 }
 
 .hero-last {
@@ -1303,6 +1316,7 @@ body.home .btn-primary:hover {
 .hero-actions {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.75rem;
     margin-top: 0.75rem;
 }
@@ -1390,7 +1404,7 @@ body.home .btn-primary:hover {
     font-size: clamp(1.1rem, 2.2vw, 1.45rem);
     line-height: 1.75;
     color: var(--text);
-    margin-bottom: 0;
+    margin-bottom: 2rem;
     font-weight: 400;
 }
 
