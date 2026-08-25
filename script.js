@@ -19,7 +19,8 @@ const projects = [
         category: "Water Crisis",
         description: "Three visualizations telling the story of five mountain reservoirs that are failing to refill, published by the Center for Environmental Law & Policy.",
         image: "assets/project-5-pdsi.png",
-        url: "projects/project-5.html"
+        url: "projects/project-5.html",
+        cclCredit: "In Partnership with Creative Climate Lab"
     },
     {
         title: "Valley of the Heat",
@@ -48,6 +49,14 @@ const projects = [
         description: "Maps the journeys of 547 tracked Antarctic icebergs using an automated data pipeline — web scraping, CSV consolidation, and geospatial visualization.",
         image: "assets/project-4-dashboard.png",
         url: "projects/project-4.html"
+    },
+    {
+        title: "Charting Our Course",
+        category: "Brand Storytelling",
+        description: "A milestone timeline built for Creative Climate Lab's Climatebase fellowship pitch deck — tracing our founding, partnerships, and progress through a marine scene that flows seamlessly from open ocean to arctic ice to tropical reef.",
+        image: "assets/project-8-timeline-1.png",
+        url: "projects/project-8.html",
+        cclCredit: "Created for Creative Climate Lab"
     }
 ];
 
@@ -68,6 +77,7 @@ projects.forEach(project => {
             <div class="portfolio-card-tag">${project.category}</div>
             <div class="portfolio-card-title">${project.title}</div>
             ${project.instagramUrl ? `<div class="card-badge">+ Social Media Adaptation</div>` : ''}
+            ${project.cclCredit ? `<div class="card-badge ccl-badge"><img src="assets/CCL-Icon-Color.webp" alt="Creative Climate Lab">${project.cclCredit}</div>` : ''}
             <p class="portfolio-card-desc">${project.description}</p>
         </div>
     `;

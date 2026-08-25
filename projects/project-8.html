@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charting Our Course | Mark Rubin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="../index.html" class="nav-name">Mark Rubin</a>
+        <div class="nav-links">
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#portfolio">Work</a>
+            <a href="../index.html#expertise">Expertise</a>
+            <a href="mailto:mark.p.rubin@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="project-page">
+        <a href="../index.html#portfolio" class="back-link">&larr; Back to Work</a>
+
+        <span class="project-tag">Brand Storytelling</span>
+        <h1>Charting Our Course</h1>
+        <div class="project-header-row">
+            <p class="project-subtitle">A marine-themed milestone timeline built for Creative Climate Lab's Climatebase fellowship capstone pitch deck</p>
+        </div>
+
+        <div class="partner-callout" style="margin-bottom:2.5rem;">
+            <img src="../assets/CCL-Icon-Color.webp" alt="Creative Climate Lab" class="partner-callout-logo">
+            <p>Created for <strong>Creative Climate Lab</strong></p>
+        </div>
+
+        <div class="timeline-carousel" id="timeline-carousel">
+            <div class="timeline-carousel-track" id="timeline-track">
+                <img src="../assets/project-8-timeline-3.png" alt="" aria-hidden="true">
+                <img src="../assets/project-8-timeline-1.png" alt="Timeline slide 1: open water, milestones from the CCL 'Aha Moment' through Science Advisor Neil Shubin joining">
+                <img src="../assets/project-8-timeline-2.png" alt="Timeline slide 2: Arctic icebergs, milestones from the CCL film and website launch through the first news posts">
+                <img src="../assets/project-8-timeline-3.png" alt="Timeline slide 3: tropical reef coastline, milestones from Climatebase Cohort honors through the planned non-profit launch">
+                <img src="../assets/project-8-timeline-1.png" alt="" aria-hidden="true">
+            </div>
+            <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous slide" onclick="tlCarousel(-1)">&larr;</button>
+            <button class="carousel-arrow carousel-arrow-next" aria-label="Next slide" onclick="tlCarousel(1)">&rarr;</button>
+            <div class="carousel-dots" id="timeline-dots"></div>
+        </div>
+        <script>
+            (function() {
+                const track = document.getElementById('timeline-track');
+                const wrap = document.getElementById('timeline-carousel');
+                const dotsWrap = document.getElementById('timeline-dots');
+                const slideCount = 3;
+                let index = 1;
+                let isAnimating = false;
+
+                for (let i = 0; i < slideCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                    dot.addEventListener('click', function() { goTo(i + 1); });
+                    dotsWrap.appendChild(dot);
+                }
+                const dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+                function render(withTransition) {
+                    track.style.transition = withTransition ? 'transform 0.6s ease' : 'none';
+                    track.style.transform = 'translateX(-' + (index * 100) + '%)';
+                    const real = ((index - 1) + slideCount) % slideCount;
+                    dots.forEach(function(d, i) { d.classList.toggle('active', i === real); });
+                }
+
+                function step(dir) {
+                    if (isAnimating) return;
+                    isAnimating = true;
+                    index += dir;
+                    render(true);
+                }
+
+                function goTo(realIndex) {
+                    if (isAnimating || realIndex === index) return;
+                    isAnimating = true;
+                    index = realIndex;
+                    render(true);
+                }
+
+                track.addEventListener('transitionend', function() {
+                    isAnimating = false;
+                    if (index === slideCount + 1) {
+                        index = 1;
+                        render(false);
+                    } else if (index === 0) {
+                        index = slideCount;
+                        render(false);
+                    }
+                });
+
+                window.tlCarousel = step;
+                render(false);
+
+                let timer = setInterval(function() { step(1); }, 5000);
+                wrap.addEventListener('mouseenter', function() { clearInterval(timer); });
+                wrap.addEventListener('mouseleave', function() {
+                    timer = setInterval(function() { step(1); }, 5000);
+                });
+            })();
+        </script>
+
+        <div class="project-content">
+
+            <div class="project-section">
+                <h2>The Ask</h2>
+                <p>Creative Climate Lab needed a single visual that could do double duty: anchor the Climatebase fellowship capstone presentation and get reused in future partnership proposals. The goal was to make the case, at a glance, for how much ground the team covered — founding, advisors, trademark filing, foundation partnerships, cohort honors — in a short window, without burying the story in a bullet-point timeline.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>The Concept</h2>
+                <p>CCL wanted a marine-based theme with a flow that carries the viewer along the timeline seamlessly, rather than a hard cut from one slide to the next. Each milestone sits as a numbered marker along one continuous curved line, and the line rides across a sequence of ocean photography — open water near a NOAA research vessel, then Arctic icebergs, then a tropical reef coastline — so the backdrop itself does the work of pulling the eye forward, slide to slide.</p>
+            </div>
+
+            <div class="project-section">
+                <h2>What the Timeline Covers</h2>
+                <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1rem;">
+                    <div class="project-card">
+                        <strong>Founding &amp; Formation</strong>
+                        <p>From the original Creative Climate Lab "Aha moment" and co-founders forming, through attaching a University of Maryland advisor and building the CCL brand.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Credibility &amp; Advisors</strong>
+                        <p>Filing for trademark protection and bringing on science advisors, including Neil Shubin and Chad Scott, to back the mission with domain expertise.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Partnerships &amp; Reach</strong>
+                        <p>Foundation partners joining — Conservation Diver and Ice Preservation among them — alongside the CCL film and website launch and the start of a regular content calendar.</p>
+                    </div>
+                    <div class="project-card">
+                        <strong>Recognition &amp; What's Next</strong>
+                        <p>Climatebase Cohort 7 and 8 honors, a board of directors formed, legal representation onboarded for the non-profit launch, and the planned Q1 2026 non-profit launch itself.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <div class="project-card">
+                    <strong>Why It Matters</strong>
+                    <p>Laid end to end, the timeline argues for itself: this much structure, credibility, and partnership got built in one fellowship cycle. That's the pitch — to Climatebase reviewers in the capstone presentation, and to any future partner CCL brings the deck to next.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Mark Rubin</p>
+    </footer>
+
+</body>
+</html>
