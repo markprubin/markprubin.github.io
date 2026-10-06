@@ -1,5 +1,13 @@
 const projects = [
     {
+        title: "Restoring Society's Relationship with the Ocean",
+        category: "Ocean Policy",
+        description: "An infographic unpacking UN Ocean Decade Challenge 10 — why nine of the ten Challenges ask what we should do to the ocean, and the tenth asks what has to change in us. Covers the behavioral barriers, the four drivers that can shift them, and where the gaps remain.",
+        image: "assets/project-9-restoring-ocean.png",
+        url: "projects/project-9.html",
+        credit: { logo: "assets/ASU_School_of_Ocean_Futures_1_Vert_RGB_MaroonGold_150ppi.webp", text: "Made for ASU School of Ocean Futures" }
+    },
+    {
         title: "Short-Lived but Brutal",
         category: "Climate Science",
         description: "A flame chart showing how long greenhouse gases persist and how hard they hit — height is warming power, length is atmospheric lifetime. Built on HTML5 canvas with IPCC AR6 decay models.",
@@ -20,7 +28,7 @@ const projects = [
         description: "Three visualizations telling the story of five mountain reservoirs that are failing to refill, published by the Center for Environmental Law & Policy.",
         image: "assets/project-5-pdsi.png",
         url: "projects/project-5.html",
-        cclCredit: "In Partnership with Creative Climate Lab"
+        credit: { logo: "assets/CCL-Icon-Color.webp", text: "In Partnership with Creative Climate Lab" }
     },
     {
         title: "Valley of the Heat",
@@ -56,7 +64,7 @@ const projects = [
         description: "A milestone timeline built for Creative Climate Lab's Climatebase fellowship pitch deck — tracing our founding, partnerships, and progress through a marine scene that flows seamlessly from open ocean to arctic ice to tropical reef.",
         image: "assets/project-8-timeline-1.png",
         url: "projects/project-8.html",
-        cclCredit: "Created for Creative Climate Lab"
+        credit: { logo: "assets/CCL-Icon-Color.webp", text: "Created for Creative Climate Lab" }
     }
 ];
 
@@ -77,7 +85,7 @@ projects.forEach(project => {
             <div class="portfolio-card-tag">${project.category}</div>
             <div class="portfolio-card-title">${project.title}</div>
             ${project.instagramUrl ? `<div class="card-badge">+ Social Media Adaptation</div>` : ''}
-            ${project.cclCredit ? `<div class="card-badge ccl-badge"><img src="assets/CCL-Icon-Color.webp" alt="Creative Climate Lab">${project.cclCredit}</div>` : ''}
+            ${project.credit ? `<div class="card-badge ccl-badge"><img src="${project.credit.logo}" alt="">${project.credit.text}</div>` : ''}
             <p class="portfolio-card-desc">${project.description}</p>
         </div>
     `;
